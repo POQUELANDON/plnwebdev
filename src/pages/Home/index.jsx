@@ -1,25 +1,20 @@
-import logo from '../../logo.svg';
-import '../../App.css';
+import DefaultPicture from '../../assets/plnme.png'
+import { useStyles } from '../../util/styles'
 
-function App() {
+function Home() {
+  const classes = useStyles()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <article className={classes.home}>
+      <img className={classes.photoHome} src={DefaultPicture} alt="pln" />
+      <h1 className={classes.titleH1}>
+        Natacha Poque Landon - Développeuse Frontend.
+      </h1>
+      <h2 className={classes.titleH2}>
+        Passionnée par le développement web et le design.
+      </h2>
+      <h3 className={classes.titleH3}>Découvrez mon portfolio.</h3>
+    </article>
+  )
 }
 
-export default App;
+export default Home

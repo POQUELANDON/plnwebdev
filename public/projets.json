@@ -1,0 +1,229 @@
+[
+	{
+		"id": "p2",
+		"title": "Agence de voyage Booki",
+		"cover": "./images/booki/booki.jpg",
+		"pictures": [
+			"../images/booki/booki1.jpg",
+			"../images/booki/bookiMobile.jpg",
+			"../images/booki/bookiTablette.jpg"
+		],
+		"description": "Intégration web avec HTML & CSS.",
+		"host":[{
+			"github": "https://github.com/POQUELANDON/P2_Creer_la_page_d_accueil_d_une_agence_de_voyage_avec_HTML5_-_CSS3.git"
+			},
+			{
+			"site": "https://poquelandon.github.io/P2_Creer_la_page_d_accueil_d_une_agence_de_voyage_avec_HTML5_-_CSS3/"
+			}
+		],
+		"rating": "5",
+		"location": "HTML & CSS",
+		"competences": [
+			"Intégrer du contenu conformément à une maquette avec HTML5 et CSS3",
+			"Implémenter une interface responsive avec HTML et CSS",
+			 "Validation du code HTML et CSS au validateur W3C",
+			 "Versionner son projet avec Git et Github",
+			 "Installer un environnement de développement front-end"
+		],
+		"tags": [
+			"HTML5",
+			"CSS3"
+		]
+	},
+	{
+		"id": "p3",
+		"title": "Sophie Bluel",
+		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-1.jpg",
+		"pictures": [
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-1.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-2.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-3.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-4.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-5.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-6.jpg"
+		],
+		"description": "Développement web avec JavaScript.",
+		"host":[{
+			"github": "https://github.com/POQUELANDON/P3_Creez_une_page_web_dynamique_avec_JavaScript.git"
+			},
+			{
+			"site": "https://sophiebluel.plnwebdev.tech/"
+			}
+		],
+		"rating": "4",
+		"location": "JavaScript",
+		"competences": [
+			"Récupérer les données utilisateurs dans le JavaScript via des formulaires.",
+			"Manipuler les éléments du DOM avec JavaScript.",
+			"Gérer les événements utilisateurs avec JavaScript."
+		],
+		"tags": [
+			"JavaScript"
+		]
+	},
+	{
+		"id": "p4",
+		"title": "Menu Maker by Qwenta",
+		"cover": "./images/MenuMakerByQwenta/MenuMakerByQwenta.jpg",
+		"pictures": [
+			"../images/MenuMakerByQwenta/MenuMakerByQwenta1.jpg",
+			"../images/MenuMakerByQwenta/MenuMakerByQwenta2.jpg",
+			"../images/MenuMakerByQwenta/MenuMakerByQwenta3.jpg",
+			"../images/MenuMakerByQwenta/MenuMakerByQwenta4.jpg",
+			"../images/MenuMakerByQwenta/MenuMakerByQwentaDiagArchi.jpg"
+		],
+		"description": "Gestion de projet et outils de développeurs.",
+		"host":[{
+			"github": ""
+			},
+			{
+			"site": "https://www.notion.so/plnmenumakerbyqwenta/invite/50f141e171fe8998707d521d83e639f345c0c784"
+			}
+		],
+		"rating": "3",
+		"location": "Gestion de projet",
+		"competences": [
+			"Suivre le déroulement du projet grâce à un outil de gestion de projet en ligne.",
+			"Rédiger les spécifications techniques d'un projet web à partir de besoins fonctionnels.",
+			"Découper une fonctionnalités en tâches pour préparer le développement.",
+			"Mettre en place une méthode de veille technologique.",
+			"Présenter une solution technique."
+		],
+		"tags": [
+			"Notion",
+			"KANBAN",
+			"Scrum",
+			"Veille technologique",
+			"Scorecard",
+			"Trello"
+		]
+	},
+	{
+		"id": "p5",
+		"title": "Nina Carducci",
+		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-1.jpg",
+		"pictures": [
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-1.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-2.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-3.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-4.jpg"
+		],
+		"description": "Optimisation et debug d'un site.",
+		"host":[{
+			"github": "https://github.com/POQUELANDON/P5_Debuggez_et_optimisez_un_site_de_photographe.git"
+			},
+			{
+			"site": "https://poquelandon.github.io/P5_Debuggez_et_optimisez_un_site_de_photographe/"
+			}
+		],
+		"rating": "3",
+		"location": "SEO",
+		"competences": [
+			"Optimiser les performances d’un site web.",
+			"Débugger un site web grâce aux Chrome DevTools.",
+			"Rédiger un cahier de recette pour tester un site."
+		],
+		"tags": [
+			"Lighthouse",
+			"Schema.org",
+			"Wave",
+			"Rich Snippet"
+		]
+	},
+	{
+		"id": "p6",
+		"title": "Kasa",
+		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-4-1.jpg",
+		"pictures": [
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-4-1.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-4-2.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-4-3.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-4-4.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-4-5.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-4-6.jpg"
+		],
+		"description": "Développement front-end avec React.",
+		"host":[{
+			"github": "https://github.com/POQUELANDON/P6_kasa.git"
+			},
+			{
+			"site": "https://kasa.plnwebdev.tech/"
+			}
+		],
+		"rating": "5",
+		"location": "React",
+		"competences": [
+			"Initialiser une application avec Create React App.",
+			"Configurer la navigation entre les pages de l'application avec React Router.",
+			"Développer des éléments de l'interface d'un site web grâce à des composants React."
+		],
+		"tags": [
+			"React",
+			"React Router",
+			"Create React App",
+			"SCSS"
+		]
+	},
+	{
+		"id": "p7",
+		"title": "Mon Vieux Grimoire",
+		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-5-1.jpg",
+		"pictures": [
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-5-1.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-5-2.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-5-3.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-5-4.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-5-5.jpg"
+		],
+		"description": "Développement back-end avec NodeJS, Express et MongoDB.",
+		"host":[{
+			"github": "https://github.com/POQUELANDON/P7-Dev-Web-Notation-Livres.git"
+			},
+			{
+			"site": "https://monvieuxgrimoire.plnwebdev.tech/"
+			}
+		],
+		"rating": "5",
+		"location": "Backend",
+		"competences": [
+			"Implémenter un modèle logique de données conformément à la réglementation.",
+			"Mettre en œuvre des opérations CRUD de manière sécurisée.",
+			"Stocker des données de manière sécurisée.",
+			"Ecoconception."
+		],
+		"tags": [
+			"NodeJS",
+			"Express",
+			"MongoDB"
+		]
+	},
+	{
+		"id": "p8",
+		"title": "PLNWEBDEV",
+		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-6-1.jpg",
+		"pictures": [
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-6-1.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-6-2.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-6-3.jpg",
+			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-6-4.jpg"
+		],
+		"description": "Publication d'un site web.",
+		"host":[{
+			"github": "https://github.com/POQUELANDON/P6_kasa.git"
+			}
+		],
+		"rating": "3",
+		"location": "React",
+		"competences": [
+			"Initialiser une application avec Create React App.",
+			"Configurer la navigation entre les pages de l'application avec React Router.",
+			"Développer des éléments de l'interface d'un site web grâce à des composants React.",
+			"Utiliser une bibliothèque React."
+		],
+		"tags": [
+			"Create React App",
+			"React Router",
+			"Material UI"
+		]
+	}
+]

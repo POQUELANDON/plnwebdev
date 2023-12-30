@@ -1,80 +1,92 @@
-// Importation des hooks nécessaires de react-router-dom et react
+import React, { useState, useContext, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { useContext, useEffect, useState } from 'react'
 import { ProjetContext } from '../../components/Router/'
 import Rating from '@material-ui/lab/Rating'
+import { useStyles } from './styles'
 import Slideshow from '../../components/Slideshow'
 import Tag from '../../components/Tag'
-import Collapse from '../../components/Collapse'
 import HostLinks from '../../components/HostLinks'
+import Collapse from '@material-ui/core/Collapse'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
+import ExpandLess from '@material-ui/icons/ExpandLess'
+import ExpandMore from '@material-ui/icons/ExpandMore'
 
 const Projet = () => {
-  // Utilisation du hook useParams pour récupérer l'ID du logement depuis l'URL
+  const classes = useStyles()
   const { id } = useParams()
-
-  // Utilisation du hook useNavigate pour la navigation
   const navigate = useNavigate()
-
-  // Utilisation du contexte pour accéder aux données des logements
   const projetsData = useContext(ProjetContext)
-
-  // Définition de l'état local pour le logement
   const [projets, setProjets] = useState(null)
+  const [open, setOpen] = useState(false)
 
-  // Utilisation du hook useEffect pour effectuer des actions après le rendu du composant
+  const handleClick = () => {
+    setOpen(!open)
+  }
+
   useEffect(() => {
-    // Trouver le logement avec l'ID correspondant
     const foundProjets = projetsData.find((projets) => projets.id === id)
 
-    // Si les données de logement ne sont pas encore chargées, ne rien faire
     if (projetsData.length === 0) {
       return
-    }
-
-    // Si le logement n'existe pas, rediriger vers la page d'erreur
-    else if (!foundProjets) {
+    } else if (!foundProjets) {
       navigate('/error')
       console.log("le projet n'existe pas")
     } else {
-      // Sinon, mettre à jour l'état du logement
       setProjets(foundProjets)
       console.log(foundProjets)
     }
   }, [id, navigate, projetsData])
 
-  // Si les données du logement ne sont pas encore chargées, afficher un message de chargement
   if (!projets) {
     return <p>Chargement...</p>
   }
-  // Afficher les informations relatives au projet
+
   return (
-    <section className="logement">
+    <div className={classes.projetContainer}>
       <Slideshow images={projets.pictures} alt={projets.title} />
-      <div className="logement-container">
-        <article className="logement-title">
-          <h1 className="logement-title--h1">{projets.title}</h1>
-          <h2 className="logement-title--h2">{projets.location}</h2>
-          <div className="tags-container">
-            {projets.tags.map((tag) => (
-              <Tag key={tag} tagName={tag} className="tag-name" />
-            ))}
+      <section className={classes.projetContent}>
+        <h1 className={classes.h1}>{projets.title}</h1>
+        <article className={classes.projetTitle}>
+          <h2 className={classes.h2}>{projets.description}</h2>
+          <div className={classes.projetHostContainer}>
+            <section className={classes.projetHost}>
+              <HostLinks
+                github={projets.host[0].github}
+                site={projets.host[1].site}
+                className={classes.projetHostLinks}
+              />
+            </section>
+            <div className={classes.projetTagContainer}>
+              <Rating name="read-only" value={projets.rating} readOnly />
+              {projets.tags.map((tag) => (
+                <Tag
+                  key={tag}
+                  tagName={tag}
+                  className={classes.projetTagStars}
+                />
+              ))}
+            </div>
           </div>
         </article>
-        <div className="host-and-rating">
-          <section className="host">
-            <HostLinks
-              github={projets.host[0].github}
-              site={projets.host[1].site}
-            />
-          </section>
-          <Rating name="read-only" value={projets.rating} readOnly />
+        <div className={classes.projetDescription}>
+          <ListItem button onClick={handleClick}>
+            <ListItemText primary="Déscription" />
+            {open ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              {projets.competences.map((competence, index) => (
+                <ListItem key={index}>
+                  <ListItemText primary={competence} />
+                </ListItem>
+              ))}
+            </List>
+          </Collapse>
         </div>
-      </div>
-      <div className="logement-collapses">
-        <Collapse title="Description" content={projets.description} />
-        <Collapse title="Competences" content={projets.competences} />
-      </div>
-    </section>
+      </section>
+    </div>
   )
 }
 

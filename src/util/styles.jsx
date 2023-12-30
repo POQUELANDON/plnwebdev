@@ -1,22 +1,15 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
-  body: {
-    display: 'flex',
-    width: '100%',
-    height: 'max-content',
-    paddingBottom: '0',
-    flexDirection: 'column',
-    alignItems: 'center',
-    margin: 'auto'
-  },
   main: {
     color: theme.palette.text.primary, // Couleur du texte
     display: 'flex',
-    padding: '0 5%',
+    padding: '0 10%',
     flexDirection: 'column',
-    gap: '35px'
-    },
+    alignItems: 'center',
+    gap: '35px',
+    width: '79vw',
+  },
   header: {
     [theme.breakpoints.up('md')]: {
       maxWidth: '992px',
@@ -30,7 +23,8 @@ export const useStyles = makeStyles((theme) => ({
     height: '10%',
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    margin: '0',
   },
   logo: {
     height: '20%',
@@ -40,7 +34,7 @@ export const useStyles = makeStyles((theme) => ({
     width: '50%',
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   navLink: {
     width: '100%',
@@ -53,72 +47,59 @@ export const useStyles = makeStyles((theme) => ({
       display: 'none', // Cache les boutons de navigation sur les petits écrans
     },
   },
-  btnLink:{ // Style pour le lien actif
-  color: theme.palette.text.primary, // Couleur du texte
-  fontFamily: theme.typography.fontFamily,
-  padding: '10px', // Espacement interne
-  textDecoration: 'none', // Supprime le soulignement
-  '&:hover': {
-    background: theme.palette.background.hover, // Change la couleur au survol
-    borderRadius: '4px',
-    color: theme.palette.text.secondary, // Couleur du texte
+  btnLink: {
+    // Style pour le lien actif
+    color: theme.palette.text.primary, // Couleur du texte
+    fontFamily: theme.typography.fontFamily,
+    padding: '10px', // Espacement interne
+    textDecoration: 'none', // Supprime le soulignement
+    '&:hover': {
+      background: theme.palette.background.hover, // Change la couleur au survol
+      borderRadius: '4px',
+      color: theme.palette.text.secondary, // Couleur du texte
+    },
   },
-},
-    btnLinkActive:{ // Style pour le lien actif
+  btnLinkActive: {
+    // Style pour le lien actif
     color: theme.palette.text.secondary, // Couleur du texte
     fontFamily: theme.typography.fontFamily,
     borderRadius: '4px',
     background: theme.palette.background.link, // Dégradé de couleur
     padding: '10px', // Espacement interne
     textDecoration: 'none', // Supprime le soulignement
-  // Ajoutez ici d'autres styles que vous voulez
-},
+    // Ajoutez ici d'autres styles que vous voulez
+  },
   menuButton: {
-    '&.MuiButtonBase-root': { // Augmente la spécificité des styles personnalisés
+    '&.MuiButtonBase-root': {
+      // Augmente la spécificité des styles personnalisés
       [theme.breakpoints.down('sm')]: {
         display: 'flex', // Affiche le bouton de menu sur les petits écrans
       },
       display: 'none', // Cache le boutons de navigation sur les petits écrans
     },
   },
-  home: {
-    width: '100%',
-    height: '100%',
+  footer: {
+    width: 'auto',
     marginRight: 'auto',
     marginLeft: 'auto',
-    background: theme.palette.background.default,
     color: theme.palette.text.primary, // Couleur du texte
     fontFamily: theme.typography.fontFamily,
     display: 'flex',
-    flexDirection: 'row',
     justifyContent: 'center',
-    borderRadius: '100px'
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '2%',
   },
-  photoHome: {
-    width: '20%',
-  },
-  footer: {
-  width: '100%',
-  marginRight: 'auto',
-  marginLeft: 'auto',
-  color: theme.palette.text.primary, // Couleur du texte
-  fontFamily: theme.typography.fontFamily,
-  display: 'flex',
-  justifyContent: 'center',
-  flexDirection: 'column',
-  alignItems: 'center',
-  padding: '2%',
-  },
-    footerLink:{
+  footerLink: {
     display: 'flex',
     justifyContent: 'center',
     gap: '100%',
   },
-  footerIcone:{
-      color: theme.palette.text.primary, // Couleur du texte
+  footerIcone: {
+    color: theme.palette.text.primary, // Couleur du texte
   },
-  footerSection:{
+  footerSection: {
     display: 'flex',
     justifyContent: 'center',
-  }
+  },
 }))

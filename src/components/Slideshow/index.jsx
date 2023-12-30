@@ -1,54 +1,83 @@
-// Importation des hooks nécessaires de React
 import React, { useState } from 'react'
-// Importation des composants SVG pour les flèches de navigation
-import { ReactComponent as ArrowLeft } from '../../assets/ArrowLeft.svg'
-import { ReactComponent as ArrowRight } from '../../assets/ArrowRight.svg'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
+import CloseIcon from '@material-ui/icons/Close'
+import Modal from 'react-modal'
+import { useStyles } from './styles'
 
-// Définition du composant Slideshow
+Modal.setAppElement('#root')
+
 function Slideshow({ images, alt }) {
-  // Utilisation du hook useState pour gérer l'index de l'image actuelle
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const classes = useStyles()
 
-  // Fonction pour passer à l'image précédente
   function previousImage() {
     setCurrentImageIndex((currentIndex) =>
       currentIndex === 0 ? images.length - 1 : currentIndex - 1,
     )
   }
 
-  // Fonction pour passer à l'image suivante
   function nextImage() {
     setCurrentImageIndex((currentIndex) =>
       currentIndex === images.length - 1 ? 0 : currentIndex + 1,
     )
   }
 
-  // Rendu du composant
+  function openModal() {
+    setModalIsOpen(true)
+  }
+
+  function closeModal() {
+    setModalIsOpen(false)
+  }
+
   return (
-    <div className="carrousel">
+    <div className={classes.carrousel}>
       <img
-        className="carrousel-image"
+        className={classes.carrouselImage}
         src={images[currentImageIndex]}
         alt={`${alt} n°${currentImageIndex + 1}`}
+        onClick={openModal}
       />
+      <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
+        <button onClick={closeModal}>
+          <CloseIcon />
+        </button>{' '}
+        {/* Bouton de fermeture avec une croix */}
+        <img
+          src={images[currentImageIndex]}
+          alt="Selected"
+          style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
+        />{' '}
+        {/* Image centrée */}
+        <button onClick={previousImage}>
+          <ArrowBackIosIcon />
+        </button>{' '}
+        {/* Bouton pour l'image précédente */}
+        <button onClick={nextImage}>
+          <ArrowForwardIosIcon />
+        </button>{' '}
+        {/* Bouton pour l'image suivante */}
+      </Modal>
       {images.length > 1 && (
-        <div className="carrousel-navigation">
+        <div className={classes.carrouselNavigation}>
           <button
-            className="carrousel-button"
+            className={classes.carrouselButton}
             aria-label="Bouton image précédente"
             onClick={previousImage}
           >
-            <ArrowLeft />
+            <ArrowBackIosIcon className={classes.carrouselArrow} />
           </button>
-          <span className="carrousel-counter">{`${currentImageIndex + 1} / ${
-            images.length
-          }`}</span>
+          <span className={classes.carrouselCounter}>{`${
+            currentImageIndex + 1
+          } / ${images.length}`}</span>
           <button
-            className="carrousel-button"
+            className={classes.carrouselButton}
             aria-label="Bouton image suivante"
             onClick={nextImage}
           >
-            <ArrowRight />
+            <ArrowForwardIosIcon className={classes.carrouselArrow} />
           </button>
         </div>
       )}
@@ -56,5 +85,4 @@ function Slideshow({ images, alt }) {
   )
 }
 
-// Exportation du composant Slideshow
 export default Slideshow

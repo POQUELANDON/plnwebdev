@@ -43,6 +43,8 @@ function App() {
     document.body.style.color = theme.palette.text.primary
     document.body.style.width = '100%'
     document.body.style.height = '100%'
+    document.body.style.margin= '0'
+    document.body.style.backgroundAttachment= 'fixed'
   }, [darkMode])
 
   function getInitialMode() {

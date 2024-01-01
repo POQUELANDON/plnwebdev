@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, TextField, Typography, Paper, Box } from '@material-ui/core'
 import { useStyles } from './styles'
+import Picture from '../../assets/contact.jpeg'
 
 const ContactForm = () => {
   const classes = useStyles()
@@ -40,13 +41,22 @@ const ContactForm = () => {
       alignItems="center"
       className={classes.contact}
     >
-      <Typography variant="h4" component="h2">
-        Contactez-moi
-      </Typography>
-      <Typography variant="body1">
-        Vous avez un projet en tête ou vous souhaitez simplement discuter ?
-        N'hésitez pas à me contacter. J'ai hâte de lire votre message !
-      </Typography>
+      <div className={classes.title}>
+        <Typography variant="h4" component="h2">
+          Contactez-moi
+        </Typography>
+        <Typography variant="body1">
+          Vous avez un projet en tête ou vous souhaitez simplement discuter ?
+        </Typography>
+        <Typography variant="body1">
+          N'hésitez pas à me contacter. J'ai hâte de lire votre message !
+        </Typography>
+        <img
+          className={classes.picture}
+          src={Picture}
+          alt="Illustration de contact"
+        />
+      </div>
       <Paper className={classes.paper}>
         <form onSubmit={handleSubmit} className={classes.form}>
           <TextField
@@ -81,6 +91,7 @@ const ContactForm = () => {
             variant="contained"
             color="primary"
             className={classes.button}
+            title="Bouton envoyer"
           >
             Envoyer
           </Button>

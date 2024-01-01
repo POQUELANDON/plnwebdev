@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from '@material-ui/core/styles'
+import Fade from '@material-ui/core/Fade'
+import { Paper } from '@material-ui/core'
 import { lightTheme, darkTheme } from '../../util/theme'
 import { useStyles } from '../../util/styles'
 import Header from '../Header/'
@@ -43,8 +45,8 @@ function App() {
     document.body.style.color = theme.palette.text.primary
     document.body.style.width = '100%'
     document.body.style.height = '100%'
-    document.body.style.margin= '0'
-    document.body.style.backgroundAttachment= 'fixed'
+    document.body.style.margin = '0'
+    document.body.style.backgroundAttachment = 'fixed'
   }, [darkMode])
 
   function getInitialMode() {
@@ -62,14 +64,58 @@ function App() {
             theme={darkMode ? darkTheme : lightTheme}
           />
           <main className={classes.main}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contactfrom" element={<ContactForm />} />
-              <Route path="/projet/:id" element={<Projet />} />
-              <Route path="*" element={<Error />} />
-            </Routes>
+            <Paper className={classes.paper}>
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <Fade in={true} timeout={1000}>
+                      <Home />
+                    </Fade>
+                  }
+                />
+                <Route
+                  path="/portfolio"
+                  element={
+                    <Fade in={true} timeout={1000}>
+                      <Portfolio />
+                    </Fade>
+                  }
+                />
+                <Route
+                  path="/about"
+                  element={
+                    <Fade in={true} timeout={1000}>
+                      <About />
+                    </Fade>
+                  }
+                />
+                <Route
+                  path="/contactfrom"
+                  element={
+                    <Fade in={true} timeout={1000}>
+                      <ContactForm />
+                    </Fade>
+                  }
+                />
+                <Route
+                  path="/projet/:id"
+                  element={
+                    <Fade in={true} timeout={1000}>
+                      <Projet />
+                    </Fade>
+                  }
+                />
+                <Route
+                  path="*"
+                  element={
+                    <Fade in={true} timeout={1000}>
+                      <Error />
+                    </Fade>
+                  }
+                />
+              </Routes>
+            </Paper>
           </main>
           <Footer />
         </Router>

@@ -10,7 +10,7 @@ const ProjectCard = ({ projets }) => {
 
   return (
     <Link to={`/projet/${projets.id}`} className={classes.cardContainer}>
-      <Card>
+      <Card className={classes.card}>
         <CardMedia
           component="img"
           alt={projets.title}

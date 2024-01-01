@@ -59,99 +59,96 @@ function About() {
   const classes = useStyles()
 
   return (
-    <article className="About">
-      <Card className={classes.card}>
-        <CardContent>
-          <div className={classes.flexContainer}>
-            <Typography variant="h5" component="h2">
-              Mon parcours
-            </Typography>
-            <section className={classes.me}>
-              <div className={classes.description}>
-                <h3 className={classes.subTitle}>
-                  Passionnée par le développement web, j’ai acquis une solide
-                  expertise dans ce domaine grâce à une formation de développeur
-                  intégrateur web chez OpenClassrooms de 2023 à 2024.
-                </h3>
-                <p className={classes.descriptionP}>
-                  Au cours de cette période, j’ai eu l’occasion de travailler
-                  sur divers projets stimulants qui m’ont permis de maîtriser
-                  les technologies clés du développement web.
-                </p>
-                <p>
-                  Fort d’un BTS en automatisme et d’une expérience en
-                  maintenance industrielle et pyrométrie, j’ai développé une
-                  solide expertise en résolution de problèmes et en
-                  automatisation. Mon rôle de chef de projet pour la Gestion de
-                  Maintenance Assistée par Ordinateur (GMAO) a renforcé ma
-                  capacité à gérer des projets techniques de grande envergure et
-                  à améliorer l’efficacité des processus. Ces compétences,
-                  combinées à ma créativité, font de moi un développeur web
-                  efficace, polyvalent et prêt à relever de nouveaux défis.
-                </p>
-                <p>
-                  Je suis fier de pouvoir partager avec vous certains de ces
-                  projets qui témoignent de mon engagement à fournir des
-                  solutions web de haute qualité.
-                </p>
-              </div>
-              <div className={classes.cvContent}>
-                <img
-                  className={classes.photoHome}
-                  src={DefaultPicture}
-                  alt="pln"
-                />
-                <Button
-                  variant="contained"
-                  className={classes.button}
-                  startIcon={<GetAppIcon />}
-                  href="mon_cv.pdf"
-                  download
-                >
-                  Télécharger mon CV
-                </Button>
-              </div>
-            </section>
-            <section className="skills">
-              <h3 className="subTitle">
-                Ce que je fais et que j’adore faire !
+    <Card className={classes.cardContainer}>
+      <CardContent>
+        <div className={classes.flexContainer}>
+          <Typography variant="h5" component="h2">
+            Mon parcours
+          </Typography>
+          <section className={classes.me}>
+            <div className={classes.description}>
+              <h3 className={classes.subTitle}>
+                Passionnée par le développement web, j’ai acquis une solide
+                expertise dans ce domaine grâce à une formation de développeur
+                intégrateur web chez OpenClassrooms de 2023 à 2024.
               </h3>
-              <div className={classes.gridContainer}>
-                {skills.map((skill, index) => (
-                  <Card key={index} className={classes.card}>
-                    <CardContent>
-                      <div className={classes.iconContainer}>
-                        <skill.Icon className={classes.icon} />
-                        <Typography
-                          variant="h5"
-                          component="h2"
-                          className={classes.centerText}
-                        >
-                          {skill.title}
-                        </Typography>
-                      </div>
-                      <Typography variant="body2" component="p">
-                        {skill.description}
+              <p className={classes.descriptionP}>
+                Au cours de cette période, j’ai eu l’occasion de travailler sur
+                divers projets stimulants qui m’ont permis de maîtriser les
+                technologies clés du développement web.
+              </p>
+              <p>
+                Fort d’un BTS en automatisme et d’une expérience en maintenance
+                industrielle et pyrométrie, j’ai développé une solide expertise
+                en résolution de problèmes et en automatisation. Mon rôle de
+                chef de projet pour la Gestion de Maintenance Assistée par
+                Ordinateur (GMAO) a renforcé ma capacité à gérer des projets
+                techniques de grande envergure et à améliorer l’efficacité des
+                processus. Ces compétences, combinées à ma créativité, font de
+                moi un développeur web efficace, polyvalent et prêt à relever de
+                nouveaux défis.
+              </p>
+              <p>
+                Je suis fier de pouvoir partager avec vous certains de ces
+                projets qui témoignent de mon engagement à fournir des solutions
+                web de haute qualité.
+              </p>
+            </div>
+            <div className={classes.cvContent}>
+              <img
+                className={classes.photoHome}
+                src={DefaultPicture}
+                alt="pln"
+              />
+              <Button
+                variant="contained"
+                className={classes.button}
+                startIcon={<GetAppIcon />}
+                href="PLNwebdevCV.pdf"
+                download
+                title="Bouton télécharger CV"
+              >
+                Télécharger mon CV
+              </Button>
+            </div>
+          </section>
+          <section className="skills">
+            <h3 className="subTitle">Ce que je fais et que j’adore faire !</h3>
+            <div className={classes.gridContainer}>
+              {skills.map((skill, index) => (
+                <Card key={index} className={classes.card}>
+                  <CardContent>
+                    <div className={classes.iconContainer}>
+                      <skill.Icon className={classes.icon} />
+                      <Typography
+                        variant="h5"
+                        component="h2"
+                        className={classes.centerText}
+                      >
+                        {skill.title}
                       </Typography>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </section>
-            <iframe
-              title="Mon tableau Miro"
-              paddings="5px"
-              width="100%"
-              height="480"
-              src="https://miro.com/app/embed/uXjVNM9OMOU=/"
-              frameBorder="0"
-              scrolling="no"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </CardContent>
-      </Card>
-    </article>
+                    </div>
+                    <Typography variant="body2" component="p">
+                      {skill.description}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+          <iframe
+            title="Mon tableau Miro"
+            paddings="5px"
+            width="100%"
+            height="480"
+            src="https://miro.com/app/embed/uXjVNM9OMOU=/"
+            frameBorder="0"
+            scrolling="no"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </CardContent>
+    </Card>
   )
 }
 

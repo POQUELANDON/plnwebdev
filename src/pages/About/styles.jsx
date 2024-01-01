@@ -1,11 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
-  card: {
-    background: theme.palette.background.default,
-    color: theme.palette.text.primary,
-    fontFamily: theme.typography.fontFamily,
-    borderRadius: '20px', // Supprime le bord arrondi
+  cardContainer: {
+    boxShadow: 'none',
   },
   flexContainer: {
     display: 'flex',
@@ -40,6 +37,7 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     flex: '0 1 auto',
     alignItems: 'center',
+    width: '100%',
   },
   photoHome: {
     width: '100%',
@@ -50,6 +48,10 @@ export const useStyles = makeStyles((theme) => ({
     borderRadius: '4px',
     background: theme.palette.background.link, // Dégradé de couleur
     padding: '10px', // Espacement interne
+  },
+  card: {
+    justifyContent: 'center',
+    textAlign: 'center',
   },
   iconContainer: {
     display: 'flex',

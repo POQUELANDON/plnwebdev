@@ -8,6 +8,9 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     gap: '10%',
     width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column-reverse',
+    },
   },
   projetContent: {
     display: 'flex',

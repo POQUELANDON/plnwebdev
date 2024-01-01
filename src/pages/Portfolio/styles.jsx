@@ -2,7 +2,6 @@ import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
   galleryContainer: {
-    borderRadius: '100%',
     display: 'flex',
     flexDirection: 'column',
     boxSizing: 'border-box',
@@ -13,6 +12,8 @@ export const useStyles = makeStyles((theme) => ({
   },
   btnGroup: {
     justifyContent: 'flex-end',
+    flexWrap: 'wrap',
+    alignItems: 'center',
   },
   btnFilter: {
     color: theme.palette.text.primary, // Couleur du texte

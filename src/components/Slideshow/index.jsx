@@ -40,23 +40,37 @@ function Slideshow({ images, alt }) {
         alt={`${alt} n°${currentImageIndex + 1}`}
         onClick={openModal}
       />
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-        <button onClick={closeModal}>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={{
+          overlay: {
+            backgroundColor: 'rgb(33 34 34 / 38%)',
+          },
+        }}
+      >
+        <button onClick={closeModal} className={classes.btnCloseModal}>
           <CloseIcon />
         </button>{' '}
         {/* Bouton de fermeture avec une croix */}
         <img
           src={images[currentImageIndex]}
           alt="Selected"
-          style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
+          style={{
+            display: 'block',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            maxWidth: '100%',
+            maxHeight: '100%',
+          }}
         />{' '}
         {/* Image centrée */}
-        <button onClick={previousImage}>
-          <ArrowBackIosIcon />
+        <button onClick={previousImage} className={classes.modalArrow}>
+          <ArrowBackIosIcon className={classes.carrouselArrow} />
         </button>{' '}
         {/* Bouton pour l'image précédente */}
-        <button onClick={nextImage}>
-          <ArrowForwardIosIcon />
+        <button onClick={nextImage} className={classes.modalArrow}>
+          <ArrowForwardIosIcon className={classes.carrouselArrow} />
         </button>{' '}
         {/* Bouton pour l'image suivante */}
       </Modal>

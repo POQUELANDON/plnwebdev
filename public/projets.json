@@ -101,10 +101,11 @@
 		"title": "Nina Carducci",
 		"cover": "./images/NinaCarducci/NinaCarducci.jpg",
 		"pictures": [
-			"../images/NinaCarducci/NinaCarducci.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-2.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-3.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-4.jpg"
+			"../images/NinaCarducci/NinaCarducciGalerie.jpg",
+			"../images/NinaCarducci/NinaCarducciModal.jpg",
+			"../images/NinaCarducci/NinaCarducciRapport1.jpg",
+			"../images/NinaCarducci/NinaCarducciRapport2.jpg",
+			"../images/NinaCarducci/NinaCarducciRapport3.jpg"
 		],
 		"description": "Optimisation et debug d'un site.",
 		"host":[{
@@ -206,7 +207,10 @@
 		],
 		"description": "Publication d'un site web.",
 		"host":[{
-			"github": "https://github.com/POQUELANDON/P6_kasa.git"
+			"github": "https://github.com/POQUELANDON/plnwebdev.git"
+			},
+			{
+			"site": ""
 			}
 		],
 		"rating": "3",

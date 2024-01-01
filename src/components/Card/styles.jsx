@@ -4,6 +4,9 @@ export const useStyles = makeStyles((theme) => ({
   cardContainer: {
     textDecoration: 'none', // Supprime le soulignement
   },
+  card: {
+    borderRadius: '20px',
+  },
   cardContent: {
     padding: '10px', // Espacement interne
     background: theme.palette.background.default,

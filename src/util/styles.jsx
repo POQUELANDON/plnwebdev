@@ -4,11 +4,10 @@ export const useStyles = makeStyles((theme) => ({
   main: {
     color: theme.palette.text.primary, // Couleur du texte
     display: 'flex',
-    padding: '0 10%',
     flexDirection: 'column',
     alignItems: 'center',
-    gap: '35px',
-    width: '79vw',
+    width: 'auto',
+    padding: '2% 10%',
   },
   header: {
     [theme.breakpoints.up('md')]: {
@@ -31,10 +30,13 @@ export const useStyles = makeStyles((theme) => ({
     width: '20%',
   },
   nav: {
-    width: '50%',
+    width: '65%',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'space-around',
+    },
   },
   navLink: {
     width: '100%',
@@ -49,7 +51,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   btnLink: {
     // Style pour le lien actif
-    color: theme.palette.text.primary, // Couleur du texte
+    color: theme.palette.text.secondary, // Couleur du texte
     fontFamily: theme.typography.fontFamily,
     padding: '10px', // Espacement interne
     textDecoration: 'none', // Supprime le soulignement
@@ -57,6 +59,7 @@ export const useStyles = makeStyles((theme) => ({
       background: theme.palette.background.hover, // Change la couleur au survol
       borderRadius: '4px',
       color: theme.palette.text.secondary, // Couleur du texte
+      padding: '0 10px', // Espacement interne
     },
   },
   btnLinkActive: {
@@ -65,7 +68,7 @@ export const useStyles = makeStyles((theme) => ({
     fontFamily: theme.typography.fontFamily,
     borderRadius: '4px',
     background: theme.palette.background.link, // Dégradé de couleur
-    padding: '10px', // Espacement interne
+    padding: '0 10px', // Espacement interne
     textDecoration: 'none', // Supprime le soulignement
     // Ajoutez ici d'autres styles que vous voulez
   },
@@ -77,6 +80,17 @@ export const useStyles = makeStyles((theme) => ({
       },
       display: 'none', // Cache le boutons de navigation sur les petits écrans
     },
+  },
+  paper: {
+    width: '100%',
+    padding: theme.spacing(3),
+    marginTop: theme.spacing(3),
+    borderRadius: '20px', // Supprime le bord arrondi
+  },
+  '&.MuiPaper-root': {
+    backgroundColor: theme.palette.background.default,
+    color: theme.palette.text.primary,
+    fontFamily: theme.typography.fontFamily,
   },
   footer: {
     width: 'auto',

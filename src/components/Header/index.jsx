@@ -4,6 +4,10 @@ import IconButton from '@material-ui/core/IconButton'
 import WbSunny from '@material-ui/icons/WbSunny'
 import NightsStay from '@material-ui/icons/NightsStay'
 import MenuIcon from '@material-ui/icons/Menu'
+import HomeIcon from '@material-ui/icons/Home'
+import InfoIcon from '@material-ui/icons/Info'
+import PortfolioIcon from '@material-ui/icons/Work'
+import ContactIcon from '@material-ui/icons/Mail'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import { useStyles } from '../../util/styles'
@@ -39,15 +43,27 @@ function Header({ darkMode, setDarkMode }) {
           onClose={handleClose}
         >
           <MenuItem onClick={handleClose} component={NavLink} to="/">
+            <IconButton aria-label="Accueil">
+              <HomeIcon />
+            </IconButton>
             Accueil
           </MenuItem>
           <MenuItem onClick={handleClose} component={NavLink} to="/about">
+            <IconButton aria-label="A Propos">
+              <InfoIcon />
+            </IconButton>
             A Propos
           </MenuItem>
           <MenuItem onClick={handleClose} component={NavLink} to="/portfolio">
+            <IconButton aria-label="Portfolio">
+              <PortfolioIcon />
+            </IconButton>
             Portfolio
           </MenuItem>
           <MenuItem onClick={handleClose} component={NavLink} to="/contactfrom">
+            <IconButton aria-label="Me contacter">
+              <ContactIcon />
+            </IconButton>
             Me contacter
           </MenuItem>
         </Menu>
@@ -58,6 +74,9 @@ function Header({ darkMode, setDarkMode }) {
               isActive ? classes.btnLinkActive : classes.btnLink
             }
           >
+            <IconButton aria-label="Accueil">
+              <HomeIcon />
+            </IconButton>
             Accueil
           </NavLink>
           <NavLink
@@ -66,6 +85,9 @@ function Header({ darkMode, setDarkMode }) {
               isActive ? classes.btnLinkActive : classes.btnLink
             }
           >
+            <IconButton aria-label="A Propos">
+              <InfoIcon />
+            </IconButton>
             A Propos
           </NavLink>
           <NavLink
@@ -74,6 +96,9 @@ function Header({ darkMode, setDarkMode }) {
               isActive ? classes.btnLinkActive : classes.btnLink
             }
           >
+            <IconButton aria-label="Portfolio">
+              <PortfolioIcon />
+            </IconButton>
             Portfolio
           </NavLink>
           <NavLink
@@ -82,6 +107,9 @@ function Header({ darkMode, setDarkMode }) {
               isActive ? classes.btnLinkActive : classes.btnLink
             }
           >
+            <IconButton aria-label="Me contacter">
+              <ContactIcon />
+            </IconButton>
             Me contacter
           </NavLink>
         </div>

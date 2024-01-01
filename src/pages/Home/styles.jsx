@@ -4,16 +4,11 @@ export const useStyles = makeStyles((theme) => ({
   home: {
     width: '100%',
     height: 'auto',
-    background: theme.palette.background.default,
-    color: theme.palette.text.primary,
-    fontFamily: theme.typography.fontFamily,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center', // Centre le contenu verticalement
     alignItems: 'center', // Centre le contenu horizontalement
     textAlign: 'center', // Centre le texte
-    borderRadius: '20px', // Supprime le bord arrondi
-    padding: theme.spacing(3), // Ajoute un peu d'espace autour du contenu
     gap: '2%',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',

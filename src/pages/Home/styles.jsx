@@ -67,10 +67,13 @@ export const useStyles = makeStyles((theme) => ({
   },
   btn: {
     marginTop: theme.spacing(2), // Ajoute un espace au-dessus du bouton
-    color: theme.palette.text.secondary, // Couleur du texte
-    fontFamily: theme.typography.fontFamily,
     borderRadius: '4px',
     background: theme.palette.background.link, // Dégradé de couleur
     padding: '10px', // Espacement interne
+  },
+  btnLink: {
+    color: theme.palette.text.secondary, // Couleur du texte
+    fontFamily: theme.typography.fontFamily,
+    textDecoration: 'none', // Supprime le soulignement
   },
 }))

@@ -1,5 +1,6 @@
 import React from 'react'
 import DefaultPicture from '../../assets/plnme.jpg'
+import { NavLink } from 'react-router-dom'
 import { Button } from '@material-ui/core'
 import { useStyles } from './styles'
 import WebIcon from '@material-ui/icons/Web' // Importez les icônes appropriées
@@ -46,11 +47,15 @@ function Home() {
           src={DefaultPicture}
           alt="Natacha Poque Landon"
         />
-        <Button variant="contained" className={classes.btn} href="/portfolio">
-          Découvrez mon travail
+        <Button variant="contained" className={classes.btn}>
+          <NavLink to="/portfolio" className={classes.btnLink}>
+            Découvrez mon travail
+          </NavLink>
         </Button>
-        <Button variant="contained" className={classes.btn} href="/contact">
-          Contactez-moi
+        <Button variant="contained" className={classes.btn}>
+          <NavLink to="/contactfrom" className={classes.btnLink}>
+            Contactez-moi
+          </NavLink>
         </Button>
       </div>
     </section>

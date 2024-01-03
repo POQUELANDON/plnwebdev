@@ -3,12 +3,27 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import MailIcon from '@material-ui/icons/Mail'
 import { useStyles } from '../../util/styles'
+import { JsonLd } from 'react-schemaorg'
 
 function Footer() {
   const classes = useStyles()
 
   return (
     <footer className={classes.footer}>
+      <JsonLd
+        itemScope
+        itemType="http://schema.org/Person"
+        item={{
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: 'Natacha Poque Landon',
+          url: 'https://www.linkedin.com/in/natacha-poque-landon-b57930247',
+          sameAs: [
+            'https://github.com/POQUELANDON',
+            'mailto:poque.landon.natacha@plnwebdev.tech',
+          ],
+        }}
+      />
       <section className={classes.footerLink}>
         <a
           href="https://www.linkedin.com/in/natacha-poque-landon-b57930247"

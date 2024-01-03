@@ -201,9 +201,11 @@
 		"cover": "./images/plnwebdev/plnwebdevCv.jpg",
 		"pictures": [
 			"../images/plnwebdev/plnwebdevCv.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-6-2.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-6-3.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-6-4.jpg"
+			"../images/plnwebdev/plnwebdevMobileDark.jpg",
+			"../images/plnwebdev/plnwebdevTabletteLight.jpg",
+			"../images/plnwebdev/plnwebdevDesktopDark.jpg",
+			"../images/plnwebdev/plnwebdevDetailsProjet.jpg",
+			"../images/plnwebdev/plnwebdevModalPhoto.jpg"
 		],
 		"description": "Publication d'un site web.",
 		"host":[{

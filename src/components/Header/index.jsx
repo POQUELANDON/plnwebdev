@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import IconButton from '@material-ui/core/IconButton'
 import WbSunny from '@material-ui/icons/WbSunny'
@@ -11,7 +12,7 @@ import ContactIcon from '@material-ui/icons/Mail'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import { useStyles } from '../../util/styles'
-import logo from '../../assets/PLN.png'
+import logo from '../../assets/PLN.jpg'
 
 function Header({ darkMode, setDarkMode }) {
   // Déclare un composant Header qui accepte darkMode et setDarkMode comme props.
@@ -127,6 +128,11 @@ function Header({ darkMode, setDarkMode }) {
       </nav>
     </header>
   )
+}
+
+Header.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+  setDarkMode: PropTypes.func.isRequired,
 }
 
 export default Header

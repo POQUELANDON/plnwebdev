@@ -57,33 +57,44 @@ const ContactForm = () => {
       </section>
       <Paper className={classes.paper}>
         <form onSubmit={handleSubmit} className={classes.form}>
-          <TextField
-            label="Votre nom"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            fullWidth
-            margin="normal"
-          />
-          <TextField
-            label="Votre email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            fullWidth
-            margin="normal"
-          />
-          <TextField
-            label="Votre message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-            multiline
-            rows={4}
-            fullWidth
-            margin="normal"
-          />
+          <label htmlFor="name">
+            <TextField
+              id="name"
+              label="Votre nom"
+              aria-label="Votre nom"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              fullWidth
+              margin="normal"
+            />
+          </label>
+          <label htmlFor="email">
+            <TextField
+              id="email"
+              label="Votre email"
+              aria-label="Votre email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              fullWidth
+              margin="normal"
+            />
+          </label>
+          <label htmlFor="message">
+            <TextField
+              id="message"
+              label="Votre message"
+              aria-label="Votre message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+              multiline
+              fullWidth
+              margin="normal"
+            />
+          </label>
           <Button
             type="submit"
             variant="contained"

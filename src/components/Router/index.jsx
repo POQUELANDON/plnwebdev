@@ -69,7 +69,7 @@ function App() {
                   <Route
                     path="/"
                     element={
-                      <Parallax speed={-50}>
+                      <Parallax speed={-5}>
                         <Home />
                       </Parallax>
                     }
@@ -77,7 +77,7 @@ function App() {
                   <Route
                     path="/portfolio"
                     element={
-                      <Parallax speed={-50}>
+                      <Parallax speed={-5}>
                         <Portfolio />
                       </Parallax>
                     }
@@ -85,7 +85,7 @@ function App() {
                   <Route
                     path="/about"
                     element={
-                      <Parallax speed={-50}>
+                      <Parallax speed={-5}>
                         <About />
                       </Parallax>
                     }
@@ -93,7 +93,7 @@ function App() {
                   <Route
                     path="/contactfrom"
                     element={
-                      <Parallax speed={-50}>
+                      <Parallax speed={-5}>
                         <ContactForm />
                       </Parallax>
                     }
@@ -101,7 +101,7 @@ function App() {
                   <Route
                     path="/projet/:id"
                     element={
-                      <Parallax speed={-50}>
+                      <Parallax speed={-5}>
                         <Projet />
                       </Parallax>
                     }

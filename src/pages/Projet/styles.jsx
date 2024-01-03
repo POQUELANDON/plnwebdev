@@ -26,6 +26,17 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'stretch',
   },
+  titleH2: {
+    fontSize: '30px', // Augmente la taille du sous-titre
+    color: theme.palette.text.primary, // Utilise la couleur secondaire pour le texte
+    fontFamily: theme.typography.h2.fontFamily,
+    marginBottom: theme.spacing(2), // Ajoute un espace sous le sous-titre
+  },
+  titleH3: {
+    fontSize: '20px', // Augmente la taille du texte
+    color: theme.palette.text.secondary, // Utilise la couleur secondaire pour le texte
+    textAlign: 'center',
+  },
   projetHostContainer: {
     display: 'flex',
     flexDirection: 'row',

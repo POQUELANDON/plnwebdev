@@ -56,7 +56,7 @@ export const useStyles = makeStyles((theme) => ({
   btnCloseModal: {
     fontSize: '50px',
     marginTop: theme.spacing(2),
-    color: theme.palette.text.secondary, // Couleur du texte
+    color: theme.palette.text.primary,
     fontFamily: theme.typography.fontFamily,
     borderRadius: '24px',
     padding: '5%', // Espacement interne

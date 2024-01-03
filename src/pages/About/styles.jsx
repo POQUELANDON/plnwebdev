@@ -4,12 +4,26 @@ export const useStyles = makeStyles((theme) => ({
   cardContainer: {
     boxShadow: 'none',
   },
+  cardContent: {
+    padding: '0 0',
+  },
   flexContainer: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     gap: '10px',
+    color: theme.palette.text.secondary, // Utilise la couleur secondaire pour le texte
+  },
+  titleH2: {
+    color: theme.palette.text.primary, // Utilise la couleur secondaire pour le texte
+    fontSize: '40px', // Augmente la taille du sous-titre
+    fontFamily: theme.typography.h2.fontFamily,
+    marginBottom: theme.spacing(2), // Ajoute un espace sous le sous-titre
+  },
+  titleH3: {
+    fontSize: '20px', // Augmente la taille du texte
+    color: theme.palette.text.secondary, // Utilise la couleur secondaire pour le texte
   },
   gridContainer: {
     display: 'grid',
@@ -52,6 +66,7 @@ export const useStyles = makeStyles((theme) => ({
   card: {
     justifyContent: 'center',
     textAlign: 'center',
+    color: theme.palette.text.secondary, // Utilise la couleur secondaire pour le texte
   },
   iconContainer: {
     display: 'flex',

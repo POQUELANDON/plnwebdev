@@ -16,7 +16,7 @@ const skills = [
     Icon: WebIcon,
     title: 'Intégration web HTML - CSS',
     description:
-      'Création de pages web en utilisant les langages de balisage HTML et CSS.',
+      'Création de pages web accessible et responsive desktop, tablette et mobile.',
   },
   {
     Icon: DeveloperModeIcon,
@@ -60,14 +60,12 @@ function About() {
 
   return (
     <Card className={classes.cardContainer}>
-      <CardContent>
+      <CardContent className={classes.cardContent}>
         <div className={classes.flexContainer}>
-          <Typography variant="h5" component="h2">
-            Mon parcours
-          </Typography>
+          <h2 className={classes.titleH2}>Mon parcours</h2>
           <section className={classes.me}>
             <div className={classes.description}>
-              <h3 className={classes.subTitle}>
+              <h3 className={classes.titleH3}>
                 Passionnée par le développement web, j’ai acquis une solide
                 expertise dans ce domaine grâce à une formation de développeur
                 intégrateur web chez OpenClassrooms de 2023 à 2024.
@@ -106,7 +104,7 @@ function About() {
                 startIcon={<GetAppIcon />}
                 href="PLNwebdevCV.pdf"
                 download
-                title="Bouton télécharger CV"
+                title="Télécharger PDF CV PLNWEBDEV"
               >
                 Télécharger mon CV
               </Button>

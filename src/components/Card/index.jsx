@@ -13,7 +13,7 @@ const ProjectCard = ({ projets }) => {
       <Card className={classes.card}>
         <CardMedia
           component="img"
-          alt={projets.title}
+          alt={`Couverture ${projets.title}`}
           height="140"
           image={projets.cover}
         />

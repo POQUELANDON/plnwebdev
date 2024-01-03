@@ -15,9 +15,11 @@ export const useStyles = makeStyles((theme) => ({
   projetContent: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
+    fontFamily: theme.typography.h2.fontFamily,
+    color: theme.palette.text.primary, // Utilise la couleur secondaire pour le texte
   },
   projetTitle: {
     display: 'flex',
@@ -32,12 +34,16 @@ export const useStyles = makeStyles((theme) => ({
   projetTagContainer: {
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center',
+    color: theme.palette.text.secondary,
   },
   projetHost: {
     display: 'flex',
     flexDirection: 'row',
+    color: theme.palette.text.secondary,
   },
   projetDescription: {
-    width: 'auto',
+    width: '70%',
+    color: theme.palette.text.secondary,
   },
 }))

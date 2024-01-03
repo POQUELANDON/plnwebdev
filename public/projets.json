@@ -19,8 +19,8 @@
 		"rating": "5",
 		"location": "HTML & CSS",
 		"competences": [
-			"Intégrer du contenu conformément à une maquette avec HTML5 et CSS3",
-			"Implémenter une interface responsive avec HTML et CSS",
+			"Intégrer du contenu accessible, conformément à une maquette avec HTML5 et les balises sémantiques",
+			"Implémenter une interface responsive avec CSS3. Optimisation desktop, tablette et mobile via media Query",
 			 "Validation du code HTML et CSS au validateur W3C",
 			 "Versionner son projet avec Git et Github",
 			 "Installer un environnement de développement front-end"
@@ -115,7 +115,7 @@
 			"site": "https://poquelandon.github.io/P5_Debuggez_et_optimisez_un_site_de_photographe/"
 			}
 		],
-		"rating": "3",
+		"rating": "4",
 		"location": "SEO",
 		"competences": [
 			"Optimiser les performances d’un site web.",
@@ -147,7 +147,7 @@
 			"site": "https://kasa.plnwebdev.tech/"
 			}
 		],
-		"rating": "5",
+		"rating": "4",
 		"location": "React",
 		"competences": [
 			"Initialiser une application avec Create React App.",
@@ -181,7 +181,7 @@
 			"site": "https://monvieuxgrimoire.plnwebdev.tech/"
 			}
 		],
-		"rating": "5",
+		"rating": "3",
 		"location": "Backend",
 		"competences": [
 			"Implémenter un modèle logique de données conformément à la réglementation.",
@@ -198,9 +198,9 @@
 	{
 		"id": "p8",
 		"title": "PLNWEBDEV",
-		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-6-1.jpg",
+		"cover": "./images/plnwebdev/plnwebdevCv.jpg",
 		"pictures": [
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-6-1.jpg",
+			"../images/plnwebdev/plnwebdevCv.jpg",
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-6-2.jpg",
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-6-3.jpg",
 			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-6-4.jpg"
@@ -213,7 +213,7 @@
 			"site": ""
 			}
 		],
-		"rating": "3",
+		"rating": "5",
 		"location": "React",
 		"competences": [
 			"Initialiser une application avec Create React App.",

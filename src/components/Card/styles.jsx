@@ -9,7 +9,9 @@ export const useStyles = makeStyles((theme) => ({
   },
   cardContent: {
     padding: '10px', // Espacement interne
-    background: theme.palette.background.default,
+    borderColor: theme.palette.background.default,
+    backgroundColor: 'transparent',
     color: theme.palette.text.secondary, // Couleur du texte
+    borderWidth: '2px',
   },
 }))

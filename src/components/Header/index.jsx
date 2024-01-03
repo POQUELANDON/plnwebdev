@@ -14,26 +14,34 @@ import { useStyles } from '../../util/styles'
 import logo from '../../assets/PLN.png'
 
 function Header({ darkMode, setDarkMode }) {
+  // Déclare un composant Header qui accepte darkMode et setDarkMode comme props.
   const handleThemeChange = () => {
-    setDarkMode(!darkMode)
+    // Déclare une fonction pour gérer le changement de thème.
+    setDarkMode(!darkMode) // Inverse la valeur de darkMode lorsque la fonction est appelée.
   }
-  const classes = useStyles()
+  const classes = useStyles() // Utilise le hook useStyles pour obtenir les classes de style.
 
-  const [anchorEl, setAnchorEl] = useState(null)
+  const [anchorEl, setAnchorEl] = useState(null) // Utilise le hook d'état pour gérer l'élément d'ancrage du menu déroulant.
 
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget)
+    // Déclare une fonction pour gérer le clic sur le bouton du menu.
+    setAnchorEl(event.currentTarget) // Définit l'élément d'ancrage sur l'élément actuellement ciblé par l'événement.
   }
 
   const handleClose = () => {
-    setAnchorEl(null)
+    // Déclare une fonction pour fermer le menu.
+    setAnchorEl(null) // Réinitialise l'élément d'ancrage à null.
   }
 
   return (
     <header className={classes.header}>
-      <img className={classes.logo} src={logo} alt="Logo" />
+      <img className={classes.logo} src={logo} alt="Logo site PLNWEBDEV" />
       <nav className={classes.nav}>
-        <IconButton onClick={handleClick} className={classes.menuButton}>
+        <IconButton
+          onClick={handleClick}
+          className={classes.menuButton}
+          aria-label="Menu"
+        >
           <MenuIcon />
         </IconButton>
         <Menu
@@ -113,7 +121,7 @@ function Header({ darkMode, setDarkMode }) {
             Me contacter
           </NavLink>
         </div>
-        <IconButton onClick={handleThemeChange}>
+        <IconButton onClick={handleThemeChange} aria-label="Mode couleur">
           {darkMode ? <WbSunny /> : <NightsStay />}
         </IconButton>
       </nav>

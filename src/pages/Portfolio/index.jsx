@@ -15,18 +15,36 @@ function Portfolio() {
 
   return (
     <section className={classes.galleryContainer}>
-      <ButtonGroup className={classes.btnGroup} variant="text" aria-label="text button group">
+      <h2 className={classes.titleH2}>Mes réalisations</h2>
+      <ButtonGroup
+        className={classes.btnGroup}
+        variant="text"
+        aria-label="text button group"
+      >
         {/* Bouton pour afficher tous les projets */}
-        <Button onClick={() => setFilter('')} className={filter === '' ? classes.btnFilterActive : classes.btnFilter}>Tous</Button>
+        <Button
+          onClick={() => setFilter('')}
+          className={
+            filter === '' ? classes.btnFilterActive : classes.btnFilter
+          }
+        >
+          Tous
+        </Button>
 
         {/* Génération d'un bouton pour chaque intitulé de "location" */}
         {locations.map((location) => (
-          <Button key={location} onClick={() => setFilter(location)} className={filter === location ? classes.btnFilterActive : classes.btnFilter}>
+          <Button
+            key={location}
+            onClick={() => setFilter(location)}
+            className={
+              filter === location ? classes.btnFilterActive : classes.btnFilter
+            }
+          >
             {location}
           </Button>
         ))}
       </ButtonGroup>
-          <ProjectCards filter={filter} />
+      <ProjectCards filter={filter} />
     </section>
   )
 }

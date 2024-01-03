@@ -1,3 +1,4 @@
+import React from 'react'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import MailIcon from '@material-ui/icons/Mail'
@@ -13,18 +14,29 @@ function Footer() {
           href="https://www.linkedin.com/in/natacha-poque-landon-b57930247"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Lien LinkedIn"
         >
-          <LinkedInIcon className={classes.footerIcone} />
+          <LinkedInIcon
+            className={classes.footerIcone}
+            titleAccess="Icône LinkedIn"
+          />
         </a>
         <a
           href="https://github.com/POQUELANDON"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Lien GitHub"
         >
-          <GitHubIcon className={classes.footerIcone} />
+          <GitHubIcon
+            className={classes.footerIcone}
+            titleAccess="Icône GitHub"
+          />
         </a>
-        <a href="mailto:poque.landon.natacha@plnwebdev.tech">
-          <MailIcon className={classes.footerIcone} />
+        <a
+          href="mailto:poque.landon.natacha@plnwebdev.tech"
+          aria-label="Lien Email"
+        >
+          <MailIcon className={classes.footerIcone} titleAccess="Icône Email" />
         </a>
       </section>
       <section className={classes.footerSection}>

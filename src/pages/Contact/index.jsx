@@ -41,10 +41,8 @@ const ContactForm = () => {
       alignItems="center"
       className={classes.contact}
     >
-      <div className={classes.title}>
-        <Typography variant="h4" component="h2">
-          Contactez-moi
-        </Typography>
+      <section className={classes.title}>
+        <h2 className={classes.titleH2}>Contactez-moi</h2>
         <Typography variant="body1">
           Vous avez un projet en tête ou vous souhaitez simplement discuter ?
         </Typography>
@@ -56,7 +54,7 @@ const ContactForm = () => {
           src={Picture}
           alt="Illustration de contact"
         />
-      </div>
+      </section>
       <Paper className={classes.paper}>
         <form onSubmit={handleSubmit} className={classes.form}>
           <TextField

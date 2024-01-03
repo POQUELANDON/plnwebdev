@@ -10,6 +10,12 @@ export const useStyles = makeStyles((theme) => ({
     gap: '30px',
     flex: '1 0 auto',
   },
+  titleH2: {
+    color: theme.palette.text.primary, // Utilise la couleur secondaire pour le texte
+    fontSize: '40px', // Augmente la taille du sous-titre
+    fontFamily: theme.typography.h2.fontFamily,
+    marginBottom: theme.spacing(1), // Ajoute un espace sous le sous-titre
+  },
   btnGroup: {
     justifyContent: 'flex-end',
     flexWrap: 'wrap',

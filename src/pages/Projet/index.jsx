@@ -47,9 +47,9 @@ const Projet = () => {
     <div className={classes.projetContainer}>
       <Slideshow images={projets.pictures} alt={projets.title} />
       <section className={classes.projetContent}>
-        <h1 className={classes.h1}>{projets.title}</h1>
+        <h2 className={classes.h1}>{projets.titleH1}</h2>
         <article className={classes.projetTitle}>
-          <h2 className={classes.h2}>{projets.description}</h2>
+          <h3 className={classes.h2}>{projets.description}</h3>
           <div className={classes.projetHostContainer}>
             <section className={classes.projetHost}>
               <HostLinks

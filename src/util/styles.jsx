@@ -9,6 +9,11 @@ export const useStyles = makeStyles((theme) => ({
     width: 'auto',
     padding: '2% 10%',
   },
+  paper: {
+    width: '100%',
+    padding: theme.spacing(3),
+    borderRadius: '20px', // Supprime le bord arrondi
+  },
   header: {
     [theme.breakpoints.up('md')]: {
       maxWidth: '992px',
@@ -26,8 +31,8 @@ export const useStyles = makeStyles((theme) => ({
     margin: '0',
   },
   logo: {
-    height: '20%',
-    width: '20%',
+    height: 'auto',
+    width: '10%',
   },
   nav: {
     width: '65%',
@@ -50,7 +55,6 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   btnLink: {
-    // Style pour le lien actif
     color: theme.palette.text.secondary, // Couleur du texte
     fontFamily: theme.typography.fontFamily,
     padding: '10px', // Espacement interne
@@ -81,22 +85,11 @@ export const useStyles = makeStyles((theme) => ({
       display: 'none', // Cache le boutons de navigation sur les petits écrans
     },
   },
-  paper: {
-    width: '100%',
-    padding: theme.spacing(3),
-    marginTop: theme.spacing(3),
-    borderRadius: '20px', // Supprime le bord arrondi
-  },
-  '&.MuiPaper-root': {
-    backgroundColor: theme.palette.background.default,
-    color: theme.palette.text.primary,
-    fontFamily: theme.typography.fontFamily,
-  },
   footer: {
     width: 'auto',
     marginRight: 'auto',
     marginLeft: 'auto',
-    color: theme.palette.text.primary, // Couleur du texte
+    color: theme.palette.text.secondary, // Couleur du texte
     fontFamily: theme.typography.fontFamily,
     display: 'flex',
     justifyContent: 'center',
@@ -110,7 +103,7 @@ export const useStyles = makeStyles((theme) => ({
     gap: '100%',
   },
   footerIcone: {
-    color: theme.palette.text.primary, // Couleur du texte
+    color: theme.palette.text.secondary, // Couleur du texte
   },
   footerSection: {
     display: 'flex',

@@ -20,21 +20,41 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   titleH1: {
-    fontSize: '28px', // Augmente la taille du titre
+    fontSize: '40px', // Augmente la taille du titre
     fontWeight: 'bold', // Rend le titre en gras
+    fontFamily: theme.typography.h1.fontFamily,
+    color: theme.palette.text.primary, // Utilise la couleur secondaire pour le texte
     marginBottom: theme.spacing(1), // Ajoute un espace sous le titre
   },
   titleH2: {
-    fontSize: '20px', // Augmente la taille du sous-titre
+    fontSize: '30px', // Augmente la taille du sous-titre
+    color: theme.palette.text.primary, // Utilise la couleur secondaire pour le texte
+    fontFamily: theme.typography.h2.fontFamily,
     marginBottom: theme.spacing(2), // Ajoute un espace sous le sous-titre
   },
   titleH3: {
-    fontSize: '18px', // Augmente la taille du texte
+    fontSize: '26px', // Augmente la taille du texte
     color: theme.palette.text.secondary, // Utilise la couleur secondaire pour le texte
   },
   description: {
     fontSize: '18px', // Augmente la taille du texte
     color: theme.palette.text.secondary, // Utilise la couleur secondaire pour le texte
+  },
+  skills: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '10%',
+    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
+  },
+  skillsItem: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   homeMe: {
     display: 'flex',

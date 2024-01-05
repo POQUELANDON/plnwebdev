@@ -13,10 +13,16 @@ const ListeProjets = ({ url, children }) => {
 
   // Utilisation du hook useEffect pour effectuer des actions après le rendu du composant
   useEffect(() => {
-    // Effectuer une requête fetch pour obtenir les données de projet
     fetch(url)
       .then((response) => response.json()) // Convertir la réponse en JSON
-      .then((data) => setProjetsData(data)) // Mettre à jour l'état des données de projet avec les données récupérées
+      .then((data) => {
+        // Convertir les valeurs de rating en nombres
+        const updatedData = data.map((projet) => ({
+          ...projet,
+          rating: parseInt(projet.rating, 10),
+        }))
+        setProjetsData(updatedData) // Mettre à jour l'état des données de projet avec les données récupérées
+      })
       .catch((error) => console.error('Erreur:', error)) // En cas d'erreur, afficher l'erreur dans la console
   }, [url]) // Le tableau contient 'url', donc useEffect s'exécutera chaque fois que 'url' change
 

@@ -63,60 +63,20 @@ function App() {
               setDarkMode={setDarkMode}
               theme={darkMode ? darkTheme : lightTheme}
             />
-            <main className={classes.main}>
-              <Paper className={classes.paper}>
-                <Routes>
-                  <Route
-                    path="/"
-                    element={
-                      <Parallax speed={-5}>
-                        <Home />
-                      </Parallax>
-                    }
-                  />
-                  <Route
-                    path="/portfolio"
-                    element={
-                      <Parallax speed={-5}>
-                        <Portfolio />
-                      </Parallax>
-                    }
-                  />
-                  <Route
-                    path="/about"
-                    element={
-                      <Parallax speed={-5}>
-                        <About />
-                      </Parallax>
-                    }
-                  />
-                  <Route
-                    path="/contactfrom"
-                    element={
-                      <Parallax speed={-5}>
-                        <ContactForm />
-                      </Parallax>
-                    }
-                  />
-                  <Route
-                    path="/projet/:id"
-                    element={
-                      <Parallax speed={-5}>
-                        <Projet />
-                      </Parallax>
-                    }
-                  />
-                  <Route
-                    path="*"
-                    element={
-                      <Parallax>
-                        <Error />
-                      </Parallax>
-                    }
-                  />
-                </Routes>
-              </Paper>
-            </main>
+            <Parallax speed={-20}>
+              <main className={classes.main}>
+                <Paper className={classes.paper}>
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/portfolio" element={<Portfolio />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/contactfrom" element={<ContactForm />} />
+                    <Route path="/projet/:id" element={<Projet />} />
+                    <Route path="*" element={<Error />} />
+                  </Routes>
+                </Paper>
+              </main>
+            </Parallax>
             <Footer />
           </Router>
         </ParallaxProvider>

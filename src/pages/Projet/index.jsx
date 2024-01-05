@@ -12,6 +12,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
 const Projet = () => {
   const classes = useStyles()
@@ -23,6 +24,10 @@ const Projet = () => {
 
   const handleClick = () => {
     setOpen(!open)
+  }
+
+  const goBack = () => {
+    navigate('/portfolio')
   }
 
   useEffect(() => {
@@ -45,6 +50,11 @@ const Projet = () => {
 
   return (
     <div className={classes.projetContainer}>
+      <ArrowBackIcon
+        className={classes.btnGoBack}
+        aria-label="Retour"
+        onClick={goBack}
+      />
       <Slideshow images={projets.pictures} alt={projets.title} />
       <section className={classes.projetContent}>
         <h2 className={classes.titleH2}>{projets.title}</h2>

@@ -12,6 +12,12 @@ export const useStyles = makeStyles((theme) => ({
       flexDirection: 'column-reverse',
     },
   },
+  btnGoBack: {
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    color: theme.palette.text.primary,
+  },
   projetContent: {
     display: 'flex',
     flexDirection: 'column',

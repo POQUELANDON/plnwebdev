@@ -5,14 +5,14 @@ export const lightTheme = createTheme({
     type: 'light',
     background: {
       default: 'linear-gradient(#F2F2F2, #d6d6d621)', // dégradé de couleur pour le thème clair
-      link: 'linear-gradient(to right, #FF5F10, #c6a294)', // Dégradé de couleur
+      link: 'linear-gradient(to bottom, #e176478f, #FED9B7, #e176478a), radial-gradient(circle, #fff2e7, #FED9B7, #e176478a)',
       hover: 'rgba(255, 95, 16, 0.3)', // couleur au survol
       filter: 'rgba(242, 242, 242, 0.5)',
       backgroundImage: 'url(/plnwebdevlight.jpg)',
     },
     text: {
-      primary: '#1C191A', // couleur de la police pour le thème clair
-      secondary: '#001F3D', // couleur secondaire de la police pour le thème clair
+      primary: '#001F3D', // couleur de la police pour le thème clair
+      secondary: '#1C191A', // couleur secondaire de la police pour le thème clair
     },
     // ...
   },
@@ -32,9 +32,9 @@ export const darkTheme = createTheme({
     type: 'dark',
     background: {
       default: 'rgba(167, 1, 146, 0.3)', // dégradé de couleur pour le thème sombre
-      link: 'linear-gradient(to right, #F14902, #FA9939)', // Dégradé de couleur
+      link: 'linear-gradient(to bottom, #f149029e, #f7b16c, #e176478a), radial-gradient(circle, #FED9B7, #FED9B7, #e176478a)', // Dégradé de couleur
       hover: 'rgba(242, 77, 5, 0.3)', // couleur au survol
-      filter: 'rgba(242, 242, 242, 0.5)',
+      filter: 'rgb(177 177 177 / 50%)',
       backgroundImage: 'url(/plnwebdevdark.jpg)',
     },
     text: {

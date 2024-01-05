@@ -32,7 +32,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   logo: {
     height: 'auto',
-    width: '10%',
+    width: '20%',
   },
   nav: {
     width: '65%',
@@ -64,6 +64,8 @@ export const useStyles = makeStyles((theme) => ({
       borderRadius: '4px',
       color: theme.palette.text.secondary, // Couleur du texte
       padding: '0 10px', // Espacement interne
+      boxShadow:
+        '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)', // Ajoute un effet d'ombre
     },
   },
   btnLinkActive: {
@@ -71,10 +73,11 @@ export const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary, // Couleur du texte
     fontFamily: theme.typography.fontFamily,
     borderRadius: '4px',
-    background: theme.palette.background.link, // Dégradé de couleur
+    background: theme.palette.background.link, // Change la couleur au survol
     padding: '0 10px', // Espacement interne
     textDecoration: 'none', // Supprime le soulignement
-    // Ajoutez ici d'autres styles que vous voulez
+    boxShadow:
+      '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)', // Ajoute un effet d'ombre
   },
   menuButton: {
     '&.MuiButtonBase-root': {

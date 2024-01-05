@@ -16,7 +16,7 @@ const HostLinks = ({ github, site }) => {
         aria-label="Lien vers GitHub"
         className={classes.link}
       >
-        <GitHubIcon titleAccess="Icône GitHub" />
+        <GitHubIcon className={classes.linkIcon} titleAccess="Lien GitHub" />
       </a>
       <a
         href={site}
@@ -26,7 +26,10 @@ const HostLinks = ({ github, site }) => {
         aria-label="Lien vers le site"
         className={classes.link}
       >
-        <LanguageIcon titleAccess="Icône de site web" />
+        <LanguageIcon
+          className={classes.linkIcon}
+          titleAccess="Lien du site web"
+        />
       </a>
     </div>
   )

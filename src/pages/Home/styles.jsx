@@ -18,6 +18,7 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    gap: '10px',
   },
   titleH1: {
     fontSize: '40px', // Augmente la taille du titre
@@ -43,18 +44,24 @@ export const useStyles = makeStyles((theme) => ({
   skills: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '10%',
-    width: '100%',
+    alignItems: 'stretch',
+    justifyContent: 'space-between',
+    gap: '10px',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
+      gap: '20px',
+      width: '100%',
     },
   },
   skillsItem: {
+    width: '-webkit-fill-available',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    backgroundColor: theme.palette.background.filter,
+    borderRadius: '20px',
+    boxShadow:
+      '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)', // Ajoute un effet d'ombre
   },
   homeMe: {
     display: 'flex',

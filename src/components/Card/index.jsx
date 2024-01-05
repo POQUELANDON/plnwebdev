@@ -24,7 +24,11 @@ const ProjectCard = ({ projets }) => {
           <Typography variant="subtitle1" className={classes.cardSubtitle1}>
             {projets.description}
           </Typography>
-          <Rating name="read-only" value={projets.rating} readOnly />
+          <Rating
+            name="read-only"
+            value={parseInt(projets.rating, 10)}
+            readOnly
+          />
         </CardContent>
       </Card>
     </Link>
@@ -37,7 +41,7 @@ ProjectCard.propTypes = {
     title: PropTypes.string.isRequired,
     cover: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
+    rating: PropTypes.string.isRequired,
   }).isRequired,
 }
 

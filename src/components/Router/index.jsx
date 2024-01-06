@@ -11,7 +11,6 @@ import About from '../../pages/About/'
 import ContactForm from '../../pages/Contact/'
 import Projet from '../../pages/Projet/'
 import Error from '../../pages/Error/'
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
 import { useStyles } from '../../util/styles'
 
 // Créer un contexte pour les données du projet
@@ -56,30 +55,26 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <ProjetContext.Provider value={projetsData}>
-        <ParallaxProvider scrollAxis="horizontal">
-          <Router>
-            <Header
-              darkMode={darkMode}
-              setDarkMode={setDarkMode}
-              theme={darkMode ? darkTheme : lightTheme}
-            />
-            <Parallax speed={-20}>
-              <main className={classes.main}>
-                <Paper className={classes.paper}>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/portfolio" element={<Portfolio />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contactfrom" element={<ContactForm />} />
-                    <Route path="/projet/:id" element={<Projet />} />
-                    <Route path="*" element={<Error />} />
-                  </Routes>
-                </Paper>
-              </main>
-            </Parallax>
-            <Footer />
-          </Router>
-        </ParallaxProvider>
+        <Router>
+          <Header
+            darkMode={darkMode}
+            setDarkMode={setDarkMode}
+            theme={darkMode ? darkTheme : lightTheme}
+          />
+          <main className={classes.main}>
+            <Paper className={classes.paper}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/contactfrom" element={<ContactForm />} />
+                <Route path="/projet/:id" element={<Projet />} />
+                <Route path="*" element={<Error />} />
+              </Routes>
+            </Paper>
+          </main>
+          <Footer />
+        </Router>
       </ProjetContext.Provider>
     </ThemeProvider>
   )

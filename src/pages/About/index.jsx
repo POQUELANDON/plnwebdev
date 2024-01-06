@@ -10,6 +10,7 @@ import { useStyles } from './styles'
 import { Button } from '@material-ui/core'
 import GetAppIcon from '@material-ui/icons/GetApp'
 import DefaultPicture from '../../assets/plnwebdevlogo.png'
+import MiroFrame from '../../components/MiroFrame'
 
 const skills = [
   {
@@ -57,7 +58,6 @@ const skills = [
 
 function About() {
   const classes = useStyles()
-
   return (
     <Card className={classes.cardContainer}>
       <CardContent className={classes.cardContent}>
@@ -134,16 +134,7 @@ function About() {
               ))}
             </div>
           </section>
-          <iframe
-            title="Mon tableau Miro"
-            paddings="5px"
-            width="100%"
-            height="480"
-            src="https://miro.com/app/embed/uXjVNM9OMOU=/"
-            frameBorder="0"
-            scrolling="no"
-            allowFullScreen
-          ></iframe>
+          <MiroFrame />
         </div>
       </CardContent>
     </Card>

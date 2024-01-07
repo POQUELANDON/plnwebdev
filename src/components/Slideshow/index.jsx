@@ -5,30 +5,35 @@ import CloseIcon from '@material-ui/icons/Close'
 import Modal from 'react-modal'
 import { useStyles } from './styles'
 
-Modal.setAppElement('#root')
+Modal.setAppElement('#root') // Définit l'élément racine pour le rendu du modal
 
 function Slideshow({ images, alt }) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [modalIsOpen, setModalIsOpen] = useState(false)
-  const classes = useStyles()
+  // Déclaration du composant Slideshow qui prend en entrée un tableau d'images et une description alternative
+  const [currentImageIndex, setCurrentImageIndex] = useState(0) // Déclaration de l'état de l'index de l'image courante, initialisé à 0
+  const [modalIsOpen, setModalIsOpen] = useState(false) // Déclaration de l'état d'ouverture du modal, initialisé à false
+  const classes = useStyles() // Utilisation des styles
 
   function previousImage() {
+    // Fonction pour passer à l'image précédente
     setCurrentImageIndex((currentIndex) =>
       currentIndex === 0 ? images.length - 1 : currentIndex - 1,
     )
   }
 
   function nextImage() {
+    // Fonction pour passer à l'image suivante
     setCurrentImageIndex((currentIndex) =>
       currentIndex === images.length - 1 ? 0 : currentIndex + 1,
     )
   }
 
   function openModal() {
+    // Fonction pour ouvrir le modal
     setModalIsOpen(true)
   }
 
   function closeModal() {
+    // Fonction pour fermer le modal
     setModalIsOpen(false)
   }
 

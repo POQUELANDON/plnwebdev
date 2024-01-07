@@ -4,7 +4,7 @@ import LanguageIcon from '@material-ui/icons/Language'
 import { useStyles } from './styles'
 
 const HostLinks = ({ github, site }) => {
-  const classes = useStyles() // Déplacez cette ligne à l'intérieur du composant
+  const classes = useStyles()
 
   return (
     <div className={classes.linkContainer}>

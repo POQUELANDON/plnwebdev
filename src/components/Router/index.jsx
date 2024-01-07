@@ -11,28 +11,26 @@ import About from '../../pages/About/'
 import ContactForm from '../../pages/Contact/'
 import Projet from '../../pages/Projet/'
 import Error from '../../pages/Error/'
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
 import { useStyles } from '../../util/styles'
+import ListeProjets from '../ListeProjets/'
 
-// Créer un contexte pour les données du projet
-export const ProjetContext = React.createContext()
+export const ProjetContext = React.createContext() // Création d'un contexte pour les données du projet
 
 function App() {
-  const classes = useStyles()
-  const [projetsData, setProjetsData] = useState([])
-  const [darkMode, setDarkMode] = useState(getInitialMode())
+  // Déclaration du composant App
+  const classes = useStyles() // Utilisation des styles
+  const [darkMode, setDarkMode] = useState(getInitialMode()) // Déclaration de l'état du mode sombre, initialisé au mode sauvegardé ou à false
 
   useEffect(() => {
-    fetch('/projets.json')
-      .then((response) => response.json())
-      .then((data) => setProjetsData(data))
-  }, [])
+    // Hook d'effet pour sauvegarder le mode sombre
+    localStorage.setItem('darkTheme', JSON.stringify(darkMode)) // Sauvegarde du mode sombre dans le stockage local
+  }, [darkMode]) // Dépendances du hook d'effet (le mode sombre, donc le hook s'exécute chaque fois que le mode sombre change)
 
   useEffect(() => {
-    localStorage.setItem('darkTheme', JSON.stringify(darkMode))
-  }, [darkMode])
-
-  useEffect(() => {
-    const theme = darkMode ? darkTheme : lightTheme
+    // Hook d'effet pour appliquer le thème
+    const theme = darkMode ? darkTheme : lightTheme // Sélection du thème en fonction du mode sombre
+    // Application du thème au corps du document
     document.body.style.fontFamily = theme.typography.fontFamily
     document.body.style.backgroundImage =
       theme.palette.background.backgroundImage
@@ -46,36 +44,46 @@ function App() {
     document.body.style.height = '100%'
     document.body.style.margin = '0'
     document.body.style.backgroundAttachment = 'fixed'
-  }, [darkMode])
+  }, [darkMode]) // Dépendances du hook d'effet (le mode sombre, donc le hook s'exécute chaque fois que le mode sombre change)
 
   function getInitialMode() {
-    const savedMode = JSON.parse(localStorage.getItem('darkTheme'))
-    return savedMode || false
+    // Fonction pour obtenir le mode initial
+    const savedMode = JSON.parse(localStorage.getItem('darkTheme')) // Récupération du mode sauvegardé
+    return savedMode || false // Retour du mode sauvegardé ou de false si aucun mode n'est sauvegardé
   }
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <ProjetContext.Provider value={projetsData}>
-        <Router>
-          <Header
-            darkMode={darkMode}
-            setDarkMode={setDarkMode}
-            theme={darkMode ? darkTheme : lightTheme}
-          />
-          <main className={classes.main}>
-            <Paper className={classes.paper}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/contactfrom" element={<ContactForm />} />
-                <Route path="/projet/:id" element={<Projet />} />
-                <Route path="*" element={<Error />} />
-              </Routes>
-            </Paper>
-          </main>
-          <Footer />
-        </Router>
-      </ProjetContext.Provider>
+      <ListeProjets url="/projets.json">
+        {(projetsData, projetsUniques) => (
+          <ProjetContext.Provider value={projetsData}>
+            <ParallaxProvider scrollAxis="horizontal">
+              <Router>
+                <Header
+                  darkMode={darkMode}
+                  setDarkMode={setDarkMode}
+                  theme={darkMode ? darkTheme : lightTheme}
+                />
+                <Parallax speed={-2}>
+                  <main className={classes.main}>
+                    <Paper className={classes.paper}>
+                      <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/portfolio" element={<Portfolio />} />
+                        <Route path="/portfolio" element={<Portfolio />} />
+                        <Route path="/contactfrom" element={<ContactForm />} />
+                        <Route path="/projet/:id" element={<Projet />} />
+                        <Route path="*" element={<Error />} />{' '}
+                      </Routes>
+                    </Paper>
+                  </main>
+                </Parallax>
+                <Footer />
+              </Router>
+            </ParallaxProvider>
+          </ProjetContext.Provider>
+        )}
+      </ListeProjets>
     </ThemeProvider>
   )
 }

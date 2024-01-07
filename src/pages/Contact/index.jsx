@@ -12,20 +12,20 @@ const ContactForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    // Vérifiez si l'email est valide
+    // Vérifie si l'email est valide
     const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/
     if (!emailRegex.test(email)) {
       alert('Veuillez entrer un email valide.')
       return
     }
 
-    // Vérifiez si le nom est valide
+    // Vérifie si le nom est valide
     if (name.trim() === '') {
       alert('Veuillez entrer votre nom.')
       return
     }
 
-    // Vérifiez si le message est valide
+    // Vérifie si le message est valide
     if (message.trim() === '') {
       alert('Veuillez entrer un message.')
       return

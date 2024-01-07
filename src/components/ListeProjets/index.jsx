@@ -6,15 +6,24 @@ import PropTypes from 'prop-types'
 import { ProjetContext } from '../Router/'
 
 // Définition du composant ListeProjets
-// Il prend deux props : 'url' pour l'URL à partir de laquelle récupérer les données de projet, et 'children' qui est une fonction à exécuter avec les données de projet
 const ListeProjets = ({ url, children }) => {
   // Utilisation du hook useState pour définir l'état local des données de projet
   const [projetsData, setProjetsData] = useState([])
+  // État pour le suivi du chargement des données
+  const [isLoading, setIsLoading] = useState(false)
+  // État pour le suivi des erreurs lors de la récupération des données
+  const [error, setError] = useState(null)
 
   // Utilisation du hook useEffect pour effectuer des actions après le rendu du composant
   useEffect(() => {
+    setIsLoading(true) // Début du chargement
     fetch(url)
-      .then((response) => response.json()) // Convertir la réponse en JSON
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Erreur lors de la récupération des données')
+        }
+        return response.json() // Convertir la réponse en JSON
+      })
       .then((data) => {
         // Convertir les valeurs de rating en nombres
         const updatedData = data.map((projet) => ({
@@ -22,25 +31,30 @@ const ListeProjets = ({ url, children }) => {
           rating: parseInt(projet.rating, 10),
         }))
         setProjetsData(updatedData) // Mettre à jour l'état des données de projet avec les données récupérées
+        setIsLoading(false) // Fin du chargement
       })
-      .catch((error) => console.error('Erreur:', error)) // En cas d'erreur, afficher l'erreur dans la console
-  }, [url]) // Le tableau contient 'url', donc useEffect s'exécutera chaque fois que 'url' change
+      .catch((error) => {
+        console.error('Erreur:', error) // En cas d'erreur, afficher l'erreur dans la console
+        setError(error) // Mettre à jour l'état d'erreur
+        setIsLoading(false) // Fin du chargement
+      })
+  }, [url]) // useEffect s'exécutera chaque fois que 'url' change
 
-  let projets = []
+  // Si les données sont en cours de chargement, afficher "Chargement..."
+  if (isLoading) {
+    return <div>Chargement...</div>
+  }
 
-  // Pour chaque projet dans les données de projet, ajouter les clés de l'objet projet à la liste des projets
-  projetsData.forEach((projet) => {
-    projets = [...projets, ...Object.keys(projet)]
-  })
-
-  // Créer un nouvel ensemble à partir de la liste des projets pour éliminer les doublons, puis convertir cet ensemble en tableau
-  const projetsUniques = [...new Set(projets)]
+  // Si une erreur s'est produite, afficher le message d'erreur
+  if (error) {
+    return <div>Une erreur s'est produite: {error.message}</div>
+  }
 
   // Utilise le fournisseur de contexte de projet pour passer les données de projet
   return (
     <ProjetContext.Provider value={projetsData}>
-      {/* Exécute la fonction 'children' avec les données de projet et les projets uniques comme arguments */}
-      {children(projetsData, projetsUniques)}
+      {/* Exécute la fonction 'children' avec les données de projet comme argument */}
+      {children(projetsData)}
     </ProjetContext.Provider>
   )
 }

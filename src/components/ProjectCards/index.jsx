@@ -3,12 +3,13 @@ import React, { useContext } from 'react'
 import Grid from '@material-ui/core/Grid'
 import Card from '../../components/Card'
 import { ProjetContext } from '../Router/'
+import { useStyles } from './styles'
 
 // Définition du composant ProjectCards
 const ProjectCards = ({ filter }) => {
   // Utilisation du contexte pour accéder aux données du projet
   const projetsData = useContext(ProjetContext)
-
+  const classes = useStyles()
   // Si les données du projet ne sont pas encore chargées, affiche "Chargement..."
   if (!projetsData) {
     return <div>Chargement...</div>
@@ -26,14 +27,21 @@ const ProjectCards = ({ filter }) => {
 
   // Création d'une carte pour chaque projet filtré
   const cards = filteredProjets.map((projets) => (
-    <Grid item xs={12} sm={6} md={4} key={projets.id}>
+    <Grid
+      item
+      xs={12}
+      sm={6}
+      md={4}
+      key={projets.id}
+      className={classes.myMasonryGridColumn}
+    >
       <Card projets={projets} />
     </Grid>
   ))
 
   // Rendu du composant : une grille contenant les cartes de projet
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={3} className={classes.myMasonryGrid}>
       {cards}
     </Grid>
   )

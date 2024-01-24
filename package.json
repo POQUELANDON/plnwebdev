@@ -1,11 +1,14 @@
 {
   "name": "plnwebdev",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@material-ui/lab": "^4.0.0-alpha.61",
+    "@mui/material": "^5.15.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -15,13 +18,16 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.49.2",
     "react-icons": "^4.12.0",
+    "react-masonry-component": "^6.3.0",
     "react-masonry-css": "^1.0.16",
+    "react-masonry-list": "^1.0.6",
     "react-modal": "^3.16.1",
     "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^6.10.0",
+    "react-router-dom": "^6.21.2",
     "react-schemaorg": "^2.0.0",
     "react-scripts": "^5.0.1",
     "react-scroll-parallax": "^3.4.5",
+    "react-spring": "^9.7.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

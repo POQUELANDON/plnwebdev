@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Card, CardContent, CardMedia, Typography } from '@material-ui/core'
+import Grow from '@mui/material/Grow'
 import Rating from '@material-ui/lab/Rating'
 import { useStyles } from './styles'
 
@@ -9,6 +10,10 @@ import { useStyles } from './styles'
 const ProjectCard = ({ projets }) => {
   // Utilisation des styles définis dans useStyles
   const classes = useStyles()
+  const [checked, setChecked] = useState(false)
+  useEffect(() => {
+    setChecked(true)
+  }, [])
 
   // Si les données du projet ne sont pas disponibles, retourne null
   if (!projets) {
@@ -22,27 +27,35 @@ const ProjectCard = ({ projets }) => {
       className={classes.cardContainer}
       aria-label={`Lien vers le projet ${projets.title}`}
     >
-      <Card className={classes.card}>
-        <CardMedia
-          component="img"
-          alt={`Couverture ${projets.title}`}
-          height="140"
-          image={projets.cover}
-        />
-        <CardContent className={classes.cardContent}>
-          <Typography variant="h5" component="div" className={classes.cardH5}>
-            {projets.title}
-          </Typography>
-          <Typography variant="subtitle1" className={classes.cardSubtitle1}>
-            {projets.description}
-          </Typography>
-          <Rating
-            name="read-only"
-            value={parseInt(projets.rating, 10)}
-            readOnly
-          />
-        </CardContent>
-      </Card>
+      <Grow orientation="horizontal" in={checked} timeout={400}>
+        <div>
+          <Card className={classes.card}>
+            <CardMedia
+              component="img"
+              alt={`Couverture ${projets.title}`}
+              height="140"
+              image={projets.cover}
+            />
+            <CardContent className={classes.cardContent}>
+              <Typography
+                variant="h5"
+                component="div"
+                className={classes.cardH5}
+              >
+                {projets.title}
+              </Typography>
+              <Typography variant="subtitle1" className={classes.cardSubtitle1}>
+                {projets.description}
+              </Typography>
+              <Rating
+                name="read-only"
+                value={parseInt(projets.rating, 10)}
+                readOnly
+              />
+            </CardContent>
+          </Card>
+        </div>
+      </Grow>
     </Link>
   )
 }

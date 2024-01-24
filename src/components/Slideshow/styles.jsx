@@ -5,6 +5,9 @@ export const useStyles = makeStyles((theme) => ({
     position: 'relative',
     width: '100%',
     height: '300px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   carrouselImage: {
     width: '100%',
@@ -13,6 +16,10 @@ export const useStyles = makeStyles((theme) => ({
     objectFit: 'contain',
     objectPosition: 'center',
     backgroundColor: '#ffff',
+    cursor: 'zoom-in',
+    '&:hover': {
+      transform: 'scale(1.05)', // Agrandit l'élément de 10%
+    },
   },
   carrouselNavigation: {
     position: 'absolute',
@@ -44,6 +51,9 @@ export const useStyles = makeStyles((theme) => ({
   },
   carrouselArrow: {
     fontSize: '50px',
+    '&:hover': {
+      fontSize: '70px', // Agrandit l'élément de 10%
+    },
   },
   carrouselCounter: {
     color: theme.palette.text.primary,
@@ -54,12 +64,11 @@ export const useStyles = makeStyles((theme) => ({
     transform: 'translateX(-50%)',
   },
   btnCloseModal: {
-    fontSize: '50px',
     marginTop: theme.spacing(2),
     color: theme.palette.text.primary,
     fontFamily: theme.typography.fontFamily,
     borderRadius: '24px',
-    padding: '5%', // Espacement interne
+    padding: '1%', // Espacement interne
     position: 'absolute',
     transform: 'translateY(-50%)',
     background: 'none',
@@ -67,6 +76,12 @@ export const useStyles = makeStyles((theme) => ({
     cursor: 'pointer',
     pointerEvents: 'auto',
     right: '0',
+  },
+  btnCloseIcon: {
+    fontSize: '30px',
+    '&:hover': {
+      fontSize: '40px',
+    },
   },
   modalArrow: {
     position: 'absolute',

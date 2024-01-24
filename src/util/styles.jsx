@@ -1,6 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
+  '*': {
+    margin: '0',
+  },
   main: {
     color: theme.palette.text.primary, // Couleur du texte
     display: 'flex',
@@ -8,8 +11,10 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     width: 'auto',
     padding: '2% 10%',
+    margin: '0',
   },
   paper: {
+    backgroundColor: 'transparent',
     width: '100%',
     padding: theme.spacing(3),
     borderRadius: '20px', // Supprime le bord arrondi
@@ -21,14 +26,10 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('lg')]: {
       maxWidth: '1280px',
     },
-    width: '100%',
-    marginRight: 'auto',
-    marginLeft: 'auto',
-    height: '10%',
+    margin: '0 auto 2px auto',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    margin: '0',
   },
   logo: {
     height: 'auto',
@@ -99,6 +100,8 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     padding: '2%',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
   },
   footerLink: {
     display: 'flex',

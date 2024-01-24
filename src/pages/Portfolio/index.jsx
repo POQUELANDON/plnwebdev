@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button'
 import ButtonGroup from '@material-ui/core/ButtonGroup'
 import ProjectCards from '../../components/ProjectCards'
 import { ProjetContext } from '../../components/Router/'
+import MainLayout from '../../components/MainLayout/'
 import { useStyles } from './styles'
 
 // Définition du composant Portfolio
@@ -35,40 +36,48 @@ function Portfolio() {
 
   // Rendu du composant : une section contenant un groupe de boutons pour le filtrage et les cartes de projet
   return (
-    <section className={classes.galleryContainer}>
-      <h2 className={classes.titleH2}>Mes réalisations</h2>
-      <ButtonGroup
-        className={classes.btnGroup}
-        variant="text"
-        aria-label="text button group"
-      >
-        {/* Bouton pour afficher tous les projets */}
-        <Button
-          onClick={() => setFilter('')}
-          className={
-            filter === '' ? classes.btnFilterActive : classes.btnFilter
-          }
-          aria-label="Afficher tous les projets"
+    <MainLayout>
+      <section className={classes.galleryContainer}>
+        <h2 className={classes.titleH2}>Mes réalisations</h2>
+        <ButtonGroup
+          className={classes.btnGroup}
+          variant="text"
+          aria-label="text button group"
         >
-          Tous
-        </Button>
-
-        {/* Génération d'un bouton pour chaque intitulé de "location" */}
-        {locations.map((location) => (
+          {/* Bouton pour afficher tous les projets */}
           <Button
-            key={location}
-            onClick={() => setFilter(location)}
+            onClick={() => {
+              setFilter('')
+            }}
             className={
-              filter === location ? classes.btnFilterActive : classes.btnFilter
+              filter === '' ? classes.btnFilterActive : classes.btnFilter
             }
-            aria-label={`Afficher les projets de ${location}`}
+            aria-label="Afficher tous les projets"
           >
-            {location}
+            Tous
           </Button>
-        ))}
-      </ButtonGroup>
-      <ProjectCards filter={filter} />
-    </section>
+
+          {/* Génération d'un bouton pour chaque intitulé de "location" */}
+          {locations.map((location) => (
+            <Button
+              key={location}
+              onClick={() => {
+                setFilter(location)
+              }}
+              className={
+                filter === location
+                  ? classes.btnFilterActive
+                  : classes.btnFilter
+              }
+              aria-label={`Afficher les projets de ${location}`}
+            >
+              {location}
+            </Button>
+          ))}
+        </ButtonGroup>
+        <ProjectCards filter={filter} />
+      </section>
+    </MainLayout>
   )
 }
 

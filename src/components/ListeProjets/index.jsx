@@ -16,15 +16,14 @@ const ListeProjets = ({ url, children }) => {
 
   // Utilisation du hook useEffect pour effectuer des actions après le rendu du composant
   useEffect(() => {
-    setIsLoading(true) // Début du chargement
-    fetch(url)
-      .then((response) => {
+    const fetchData = async () => {
+      setIsLoading(true) // Début du chargement
+      try {
+        const response = await fetch(url)
         if (!response.ok) {
           throw new Error('Erreur lors de la récupération des données')
         }
-        return response.json() // Convertir la réponse en JSON
-      })
-      .then((data) => {
+        const data = await response.json() // Convertir la réponse en JSON
         // Convertir les valeurs de rating en nombres
         const updatedData = data.map((projet) => ({
           ...projet,
@@ -32,12 +31,14 @@ const ListeProjets = ({ url, children }) => {
         }))
         setProjetsData(updatedData) // Mettre à jour l'état des données de projet avec les données récupérées
         setIsLoading(false) // Fin du chargement
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error('Erreur:', error) // En cas d'erreur, afficher l'erreur dans la console
         setError(error) // Mettre à jour l'état d'erreur
         setIsLoading(false) // Fin du chargement
-      })
+      }
+    }
+
+    fetchData()
   }, [url]) // useEffect s'exécutera chaque fois que 'url' change
 
   // Si les données sont en cours de chargement, afficher "Chargement..."

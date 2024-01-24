@@ -152,7 +152,8 @@
 		"competences": [
 			"Initialiser une application avec Create React App.",
 			"Configurer la navigation entre les pages de l'application avec React Router.",
-			"Développer des éléments de l'interface d'un site web grâce à des composants React."
+			"Développer des éléments de l'interface d'un site web grâce à des composants React.",
+			"Utiliser Sass pour développer l'interface."
 		],
 		"tags": [
 			"React",
@@ -221,12 +222,42 @@
 			"Initialiser une application avec Create React App.",
 			"Configurer la navigation entre les pages de l'application avec React Router.",
 			"Développer des éléments de l'interface d'un site web grâce à des composants React.",
-			"Utiliser une bibliothèque React."
+			"Utiliser une bibliothèque React.",
+			"Utiliser Material-UI pour développer l'interface"
 		],
 		"tags": [
 			"Create React App",
 			"React Router",
 			"Material UI"
+		]
+	},
+	{
+		"id": "p9",
+		"title": "Morpion Duos",
+		"cover": "./images/MonMorpionDuos/MonMorpionDuos.jpg",
+		"pictures": [
+			"../images/MonMorpionDuos/MonMorpionDuosRules.jpg",
+			"../images/MonMorpionDuos/MonMorpionDuosWin.jpg"
+		],
+		"description": "Créer un jeu simple mais interactif qui peut être joué par deux joueurs sur le même appareil.",
+		"host":[{
+			"github": "https://github.com/POQUELANDON/MonMorpionMiniProjet.git"
+			},
+			{
+			"site": "https://monmorpionduos.plnwebdev.tech/"
+			}
+		],
+		"rating": "2",
+		"location": "React",
+		"competences": [
+			"Jeu du morpion développé en TypeScript et React",
+			"Intégration d'animations avec animate.css et react",
+			""
+		],
+		"tags": [
+			"TypeScript",
+			"React",
+			"Animate.css"
 		]
 	}
 ]

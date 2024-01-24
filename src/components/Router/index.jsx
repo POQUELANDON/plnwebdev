@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from '@material-ui/core/styles'
-import { Paper } from '@material-ui/core'
 import { lightTheme, darkTheme } from '../../util/theme'
 import Header from '../Header/'
 import Footer from '../Footer/'
@@ -11,15 +10,12 @@ import About from '../../pages/About/'
 import ContactForm from '../../pages/Contact/'
 import Projet from '../../pages/Projet/'
 import Error from '../../pages/Error/'
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
-import { useStyles } from '../../util/styles'
 import ListeProjets from '../ListeProjets/'
 
 export const ProjetContext = React.createContext() // Création d'un contexte pour les données du projet
 
 function App() {
   // Déclaration du composant App
-  const classes = useStyles() // Utilisation des styles
   const [darkMode, setDarkMode] = useState(getInitialMode()) // Déclaration de l'état du mode sombre, initialisé au mode sauvegardé ou à false
 
   useEffect(() => {
@@ -51,36 +47,30 @@ function App() {
     const savedMode = JSON.parse(localStorage.getItem('darkTheme')) // Récupération du mode sauvegardé
     return savedMode || false // Retour du mode sauvegardé ou de false si aucun mode n'est sauvegardé
   }
+
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <ListeProjets url="/projets.json">
         {(projetsData, projetsUniques) => (
           <ProjetContext.Provider value={projetsData}>
-            <ParallaxProvider scrollAxis="horizontal">
-              <Router>
-                <Header
-                  darkMode={darkMode}
-                  setDarkMode={setDarkMode}
-                  theme={darkMode ? darkTheme : lightTheme}
-                />
-                <Parallax speed={-2}>
-                  <main className={classes.main}>
-                    <Paper className={classes.paper}>
-                      <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/portfolio" element={<Portfolio />} />
-                        <Route path="/portfolio" element={<Portfolio />} />
-                        <Route path="/contactfrom" element={<ContactForm />} />
-                        <Route path="/projet/:id" element={<Projet />} />
-                        <Route path="*" element={<Error />} />{' '}
-                      </Routes>
-                    </Paper>
-                  </main>
-                </Parallax>
-                <Footer />
-              </Router>
-            </ParallaxProvider>
+            <Router>
+              <Header
+                darkMode={darkMode}
+                setDarkMode={setDarkMode}
+                theme={darkMode ? darkTheme : lightTheme}
+              />
+
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/contactfrom" element={<ContactForm />} />
+                <Route path="/projet/:id" element={<Projet />} />
+                <Route path="*" element={<Error />} />
+              </Routes>
+              <Footer />
+            </Router>
           </ProjetContext.Provider>
         )}
       </ListeProjets>

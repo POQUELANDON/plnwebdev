@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { ProjetContext } from '../../components/Router/'
 import Rating from '@material-ui/lab/Rating'
 import { useStyles } from './styles'
+import MainLayout from '../../components/MainLayout/'
 import Slideshow from '../../components/Slideshow'
 import Tag from '../../components/Tag'
 import HostLinks from '../../components/HostLinks'
@@ -49,54 +50,56 @@ const Projet = () => {
   }
 
   return (
-    <div className={classes.projetContainer}>
-      <ArrowBackIcon
-        className={classes.btnGoBack}
-        aria-label="Retour"
-        onClick={goBack}
-      />
-      <Slideshow images={projets.pictures} alt={projets.title} />
-      <section className={classes.projetContent}>
-        <h2 className={classes.titleH2}>{projets.title}</h2>
-        <article className={classes.projetTitle}>
-          <h3 className={classes.titleH3}>{projets.description}</h3>
-          <div className={classes.projetHostContainer}>
-            <section className={classes.projetHost}>
-              <HostLinks
-                github={projets.host[0].github}
-                site={projets.host[1].site}
-                className={classes.projetHostLinks}
-              />
-            </section>
-            <div className={classes.projetTagContainer}>
-              <Rating name="read-only" value={projets.rating} readOnly />
-              {projets.tags.map((tag) => (
-                <Tag
-                  key={tag}
-                  tagName={tag}
-                  className={classes.projetTagStars}
+    <MainLayout>
+      <div className={classes.projetContainer}>
+        <ArrowBackIcon
+          className={classes.btnGoBack}
+          aria-label="Retour"
+          onClick={goBack}
+        />
+        <Slideshow images={projets.pictures} alt={projets.title} />
+        <section className={classes.projetContent}>
+          <h2 className={classes.titleH2}>{projets.title}</h2>
+          <article className={classes.projetTitle}>
+            <h3 className={classes.titleH3}>{projets.description}</h3>
+            <div className={classes.projetHostContainer}>
+              <section className={classes.projetHost}>
+                <HostLinks
+                  github={projets.host[0].github}
+                  site={projets.host[1].site}
+                  className={classes.projetHostLinks}
                 />
-              ))}
+              </section>
+              <div className={classes.projetTagContainer}>
+                <Rating name="read-only" value={projets.rating} readOnly />
+                {projets.tags.map((tag) => (
+                  <Tag
+                    key={tag}
+                    tagName={tag}
+                    className={classes.projetTagStars}
+                  />
+                ))}
+              </div>
             </div>
+          </article>
+          <div className={classes.projetDescription}>
+            <ListItem button onClick={handleClick}>
+              <ListItemText primary="Déscription" />
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {projets.competences.map((competence, index) => (
+                  <ListItem key={index}>
+                    <ListItemText primary={competence} />
+                  </ListItem>
+                ))}
+              </List>
+            </Collapse>
           </div>
-        </article>
-        <div className={classes.projetDescription}>
-          <ListItem button onClick={handleClick}>
-            <ListItemText primary="Déscription" />
-            {open ? <ExpandLess /> : <ExpandMore />}
-          </ListItem>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              {projets.competences.map((competence, index) => (
-                <ListItem key={index}>
-                  <ListItemText primary={competence} />
-                </ListItem>
-              ))}
-            </List>
-          </Collapse>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </MainLayout>
   )
 }
 

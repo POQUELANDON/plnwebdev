@@ -4,12 +4,16 @@ import GitHubIcon from '@material-ui/icons/GitHub'
 import MailIcon from '@material-ui/icons/Mail'
 import { useStyles } from '../../util/styles'
 import { JsonLd } from 'react-schemaorg'
+import BackgroundImage from '../../assets/backgroundHFooter.svg'
 
 function Footer() {
   const classes = useStyles()
 
   return (
-    <footer className={classes.footer}>
+    <footer
+      className={classes.footer}
+      style={{ backgroundImage: `url(${BackgroundImage})` }}
+    >
       <JsonLd
         itemScope
         itemType="http://schema.org/Person"

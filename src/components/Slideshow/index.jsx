@@ -55,7 +55,7 @@ function Slideshow({ images, alt }) {
         }}
       >
         <button onClick={closeModal} className={classes.btnCloseModal}>
-          <CloseIcon />
+          <CloseIcon className={classes.btnCloseIcon} />
         </button>{' '}
         {/* Bouton de fermeture avec une croix */}
         <img

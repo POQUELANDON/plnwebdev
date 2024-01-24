@@ -4,10 +4,9 @@ export const useStyles = makeStyles((theme) => ({
   projetContainer: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'stretch',
     justifyContent: 'center',
-    gap: '10%',
-    width: '100%',
+    gap: '3%',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
     },
@@ -22,7 +21,9 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    gap: '2px',
+    padding: '10px',
     width: '100%',
     fontFamily: theme.typography.h2.fontFamily,
     color: theme.palette.text.primary, // Utilise la couleur secondaire pour le texte

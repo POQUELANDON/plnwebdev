@@ -1,4 +1,5 @@
 import React from 'react'
+import MainLayout from '../../components/MainLayout/'
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
@@ -30,26 +31,28 @@ function Error() {
   const classes = useStyles()
 
   return (
-    <div className={classes.root}>
-      <span className={classes.emoji} role="img" aria-label="Confused Face">
-        😕
-      </span>
-      <h1>Oups! Cette page n'existe pas.</h1>
-      <p>
-        Il semble que vous vous soyez perdu. Pas de soucis, ça arrive aux
-        meilleurs d'entre nous.
-      </p>
-      <Button
-        title="Bouton de retour acceuil"
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        component={Link}
-        to="/"
-      >
-        Retour à l'accueil
-      </Button>
-    </div>
+    <MainLayout>
+      <div className={classes.root}>
+        <span className={classes.emoji} role="img" aria-label="Confused Face">
+          😕
+        </span>
+        <h1>Oups! Cette page n'existe pas.</h1>
+        <p>
+          Il semble que vous vous soyez perdu. Pas de soucis, ça arrive aux
+          meilleurs d'entre nous.
+        </p>
+        <Button
+          title="Bouton de retour acceuil"
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          component={Link}
+          to="/"
+        >
+          Retour à l'accueil
+        </Button>
+      </div>
+    </MainLayout>
   )
 }
 

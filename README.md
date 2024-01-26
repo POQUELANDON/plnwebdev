@@ -1,6 +1,9 @@
 # Mon portfolio comme bilan de compétences techniques à travers le code du site lui-même et son interface.
 Pour me présenter, lister et montrer les projets sur lesquels j’ai travaillé.
-Développé avec REACT, Matérial-UI, basé sur les compétences que j’ai déjà acquises et en développer d'autres.
+Basé sur les compétences que j’ai déjà acquises et en développer d'autres.
+# Développé avec :
+<img alt="Material UI" src="https://img.shields.io/badge/materialui-%230081CB.svg?&style=for-the-badge&logo=material-ui&logoColor=white"/>, 
+<img alt="React" src="https://img.shields.io/badge/react-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
 
 src
 
